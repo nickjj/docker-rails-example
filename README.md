@@ -6,8 +6,8 @@ You could use this example app as a base for your new project or as a guide to
 Dockerize your existing Rails app.
 
 The example app is minimal but it wires up a number of things you might use in
-a real world Rails app, but at the same time I didn't want to load it up with a
-million personal opinions.
+a real world Rails app, but at the same time it's not loaded up with a million
+personal opinions.
 
 For the Docker bits, everything included is an accumulation of Docker best
 practices based on building and deploying dozens of assorted Dockerized web
