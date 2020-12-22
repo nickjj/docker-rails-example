@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+
+set -e
+
+DC="${DC:-exec}"
+APP_NAME="${APP_NAME:-hello}"
+
+# If we're running in CI we need to disable TTY allocation for docker-compose
+# commands that enable it by default, such as exec and run.
+TTY=""
+if [[ ! -t 1 ]]; then
+  TTY="-T"
+fi
+
+function rails {
+  ## Run any Rails commands
+
+  # We need to create the test packs before we run our tests.
+  if [ "${1}" == "test" ]; then
+    docker-compose "${DC}" ${TTY} -e "RAILS_ENV=test" webpacker rails webpacker:compile
+  fi
+
+  docker-compose "${DC}" ${TTY} web rails "${@}"
+}
+
+function bash {
+  ## Start a Bash session in the web container
+  docker-compose "${DC}" ${TTY} web bash "${@}"
+}
+
+function psql {
+  ## Connect to PostgreSQL with psql
+  docker-compose "${DC}" ${TTY} postgres psql -U "${APP_NAME}" "${@}"
+}
+
+function redis-cli {
+  ## Connect to Redis with redis-cli
+  docker-compose "${DC}" ${TTY} redis redis-cli "${@}"
+}
+
+function bundle {
+  ## Install Ruby dependencies and write out a lock file
+  docker-compose build
+  docker-compose run ${TTY} web bundle "${@}"
+  docker-compose down
+}
+
+function yarn {
+  ## Install Yarn dependencies and write out a lock file
+  docker-compose build
+  docker-compose run ${TTY} webpacker yarn "${@}"
+  docker-compose down
+}
+
+function clean {
+  ## Remove cache and other machine generates files
+  rm -rf node_modules/ public/assets public/packs* tmp/* .byebug_history
+}
+
+function ci:install-deps {
+  # Install Continuous Integration (CI) dependencies
+  sudo apt-get install -y curl shellcheck
+  sudo curl \
+    -L https://raw.githubusercontent.com/nickjj/wait-until/v0.1.2/wait-until \
+    -o /usr/local/bin/wait-until && sudo chmod +x /usr/local/bin/wait-until
+}
+
+function ci:test {
+  # Execute Continuous Integration (CI) pipeline
+  #
+  # It's expected that your CI environment has these tools available:
+  #   - https://github.com/koalaman/shellcheck
+  #   - https://github.com/nickjj/wait-until
+  shellcheck run bin/docker-entrypoint-web
+
+  cp --no-clobber .env.example .env
+  cp --no-clobber docker-compose.override.yml.example docker-compose.override.yml
+
+  docker-compose build
+  docker-compose up -d
+
+  # shellcheck disable=SC1091
+  . .env
+  wait-until "docker-compose exec -T \
+    -e PGPASSWORD=${POSTGRES_PASSWORD} postgres \
+    psql -U ${POSTGRES_USER} ${POSTGRES_USER} -c 'SELECT 1'"
+
+  rails db:setup
+
+  # Since we're running tests in CI without volumes and Rails needs the packs
+  # to exist when running tests, we need to run our tests from the webpacker
+  # container instead of the web container since the web container won't have
+  # the packs in it.
+  docker-compose "${DC}" ${TTY} webpacker rails "${@}"
+}
+
+function help {
+    printf "%s <task> [args]\n\nTasks:\n" "${0}"
+
+    compgen -A function | cat -n
+
+    printf "\nExtended help:\n  Each task has comments for general usage\n"
+}
+
+# This idea is heavily inspired by: https://github.com/adriancooney/Taskfile
+TIMEFORMAT=$'\nTask completed in %3lR'
+time "${@:-help}"

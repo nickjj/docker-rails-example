@@ -1,0 +1,32 @@
+# Ignore bundler config and other Ruby related files.
+.bundle
+.byebug_history
+
+# Ignore all logfiles and tempfiles.
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
+
+# Ignore uploaded files in development.
+storage/*
+!storage/.keep
+
+# Ignore master key for decrypting credentials.
+config/master.key
+config/credentials/development.key
+config/credentials/production.key
+
+# Ignore front-end related files.
+node_modules/
+public/assets/
+public/packs/
+public/packs-test/
+yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore secrets and other files.
+.env*
+!.env.example
+docker-compose.override.yml
