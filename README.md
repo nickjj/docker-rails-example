@@ -209,7 +209,7 @@ few variants of the string "hello" and update a few Docker related resources.
 You can do that from the command line without needing to install any extra
 dependencies by following the instructions below.
 
-#### Removing the original Docker resources:
+#### Remove the original Docker resources:
 
 When the hello app was first upped with Docker Compose a new database, user and
 password was created automatically based on the values of certain environment
