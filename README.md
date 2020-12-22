@@ -232,7 +232,7 @@ docker-compose down -v
 #### Run these commands from the same directory as this git repo:
 
 ```sh
-# Change hello and Hello to be whatever you want to your app name to be. This
+# Change hello and Hello to be whatever you want your app name to be. This
 # would be similar to what you would name your app if you ran rails new.
 #
 # After renaming these values, paste both variables into your terminal.
