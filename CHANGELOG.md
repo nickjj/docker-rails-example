@@ -7,7 +7,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-- Nothing yet!
+### Changed
+
+- Rename `static` controller to `pages`
+- Call `rails s` instead of `puma -C config/puma.rb` in the Dockerfile CMD
+- Meta description to include the app being production ready
 
 ## [0.1.0] - 2020-12-22
 
