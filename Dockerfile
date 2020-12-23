@@ -69,4 +69,4 @@ ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
 
 EXPOSE 8000
 
-CMD ["puma", "-C", "config/puma.rb"]
+CMD ["rails", "s"]
