@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'static#home'
+  root to: 'pages#home'
 
-  scope controller: :static do
+  scope controller: :pages do
     get :up
   end
 
