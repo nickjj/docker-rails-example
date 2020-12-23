@@ -384,8 +384,9 @@ couple of free and paid resources. There's Google too!
 
 #### Courses / Screencasts
 
-- <https://diveintodocker.com> is a course I created which goes over the Docker
-and Docker Compose fundamentals
+- [https://diveintodocker.com](https://diveintodocker.com?ref=docker-rails-example)
+  is a course I created which goes over the Docker and Docker Compose
+  fundamentals
 
 ### Deploy to Production
 
