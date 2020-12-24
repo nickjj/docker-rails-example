@@ -66,7 +66,7 @@ Dockerize an existing Rails app.
     - Use a standalone Action Cable process
     - Use a standalone Webpack watcher process in development
 - **App Features**:
-    - Add a `static` controller with `home` and `up` (health check) actions
+    - Add a `pages` controller with `home` and `up` (health check) actions
 - **Config**:
     - Log to STDOUT so that Docker can consume and deal with log output 
     - Credentials are removed (secrets are loaded in with an `.env` file)
