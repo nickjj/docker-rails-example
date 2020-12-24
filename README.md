@@ -318,6 +318,10 @@ adding custom changes.
 ./run rails test
 ```
 
+If everything passes now you can optionally `git add -A && git commit -m
+"Initial commit"` and start customizing your app. Alternatively you can wait
+until you develop more of your app before committing anything. It's up to you!
+
 #### Tying up a few loose ends:
 
 You'll probably want to create a fresh `CHANGELOG.md` file for your project. I
