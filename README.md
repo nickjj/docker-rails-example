@@ -31,7 +31,7 @@ updated every time I bump the versions:
 - [See a way to improve something?](#see-a-way-to-improve-something)
 - [Additional resources](#additional-resources)
   - [Learn more about Docker and Ruby on Rails](#learn-more-about-docker-and-ruby-on-rails)
-  - [Deploy to Production](#deploy-to-production)
+  - [Deploy to production](#deploy-to-production)
 - [About the author](#about-the-author)
 
 ## Tech stack
@@ -388,7 +388,7 @@ couple of free and paid resources. There's Google too!
   is a course I created which goes over the Docker and Docker Compose
   fundamentals
 
-### Deploy to Production
+### Deploy to production
 
 I'm creating an in-depth course related to deploying Dockerized web apps. If
 you want to get notified when it launches with a discount and potentially get
