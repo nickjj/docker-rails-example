@@ -9,6 +9,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Ping Redis as part of the `/up` health check
 - Rename `static` controller to `pages`
 - Call `rails s` instead of `puma -C config/puma.rb` in the Dockerfile CMD
 - Meta description to include the app being production ready
