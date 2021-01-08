@@ -2,6 +2,7 @@
   "name": "hello",
   "private": true,
   "dependencies": {
+    "@hotwired/turbo-rails": "7.0.0-beta.3",
     "@rails/actioncable": "6.1.0",
     "@rails/activestorage": "6.1.0",
     "@rails/ujs": "6.1.0",
@@ -10,8 +11,7 @@
     "postcss": "8.2.1",
     "stimulus": "2.0.0",
     "tailwindcss": "2.0.2",
-    "tailwindcss-stimulus-components": "2.1.0",
-    "turbolinks": "5.2.0"
+    "tailwindcss-stimulus-components": "2.1.1"
   },
   "version": "0.1.0",
   "devDependencies": {

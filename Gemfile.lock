@@ -178,9 +178,8 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.0.1)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.5.3)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     web-console (4.1.0)
@@ -222,7 +221,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq (~> 6.1.2)
   spring
-  turbolinks (~> 5)
+  turbo-rails (~> 0.5)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
@@ -232,4 +231,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.1.4
+   2.2.3

@@ -50,7 +50,7 @@ out for something else on your own.
 ### Front-end
 
 - [Webpacker](https://github.com/rails/webpacker)
-- [Turbolinks](https://github.com/turbolinks/turbolinks)
+- [Hotwire](https://hotwire.dev/)
 - [StimulusJS](https://stimulusjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 
