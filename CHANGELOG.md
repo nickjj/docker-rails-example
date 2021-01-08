@@ -20,7 +20,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Removed
 
-- Turbolinks (replaced Hotwire Turbo Drive)
+- Turbolinks (replaced by Hotwire Turbo Drive)
 
 ## [0.1.0] - 2020-12-22
 
