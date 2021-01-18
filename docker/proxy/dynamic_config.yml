@@ -1,0 +1,10 @@
+http:
+  middleware:
+    secureRedirect:
+      redirectScheme:
+        scheme: 'https'
+
+tls:
+  certificates:
+    - certFile: '/etc/ssl/server.crt'
+      keyFile: '/etc/ssl/server.key'

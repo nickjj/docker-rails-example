@@ -1,0 +1,18 @@
+api:
+  dashboard: true
+  debug: false
+
+entryPoints:
+  http:
+    address: :80
+  https:
+    address: :443
+  cable:
+    address: :28080
+
+providers:
+  docker:
+    exposedByDefault: false
+
+  file:
+    filename: '/etc/traefik/dynamic_config.yml'
