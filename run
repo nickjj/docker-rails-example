@@ -91,7 +91,7 @@ function ci:test {
   # to exist when running tests, we need to run our tests from the webpacker
   # container instead of the web container since the web container won't have
   # the packs in it.
-  docker-compose "${DC}" ${TTY} webpacker rails test
+  rails test
 }
 
 function help {
