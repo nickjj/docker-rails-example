@@ -45,11 +45,22 @@ function bundle:install {
   docker-compose down
 }
 
+function bundle:outdated {
+  ## List any installed gems that are outdated
+  docker-compose "${DC}" ${TTY} web bundle outdated
+}
+
 function yarn:install {
   ## Install Yarn dependencies and write out a lock file
   docker-compose build
   docker-compose run ${TTY} webpacker yarn install
   docker-compose down
+}
+
+function yarn:outdated {
+  ## Install yarn dependencies and write lock file
+  docker-compose "${DC}" ${TTY} webpacker yarn outdated
+
 }
 
 function clean {
