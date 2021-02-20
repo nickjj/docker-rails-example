@@ -12,55 +12,66 @@ if [[ ! -t 1 ]]; then
   TTY="-T"
 fi
 
+# -----------------------------------------------------------------------------
+# Helper functions start with _ and aren't listed in this script's help menu.
+# -----------------------------------------------------------------------------
+
+function _dc {
+  docker-compose "${DC}" ${TTY} "${@}"
+}
+
+function _build_run_down {
+  docker-compose build
+  docker-compose run ${TTY} "${@}"
+  docker-compose down
+}
+
+# -----------------------------------------------------------------------------
+
 function rails {
   ## Run any Rails commands
 
   # We need to create the test packs before we run our tests.
-  if [ "${1}" == "test" ]; then
-    docker-compose "${DC}" ${TTY} -e "RAILS_ENV=test" webpacker rails webpacker:compile
+  if [ "${1-''}" == "test" ]; then
+    _dc -e "RAILS_ENV=test" webpacker rails webpacker:compile
   fi
 
-  docker-compose "${DC}" ${TTY} web rails "${@}"
+  _dc web rails "${@}"
 }
 
 function bash {
   ## Start a Bash session in the web container
-  docker-compose "${DC}" ${TTY} web bash "${@}"
+  _dc web bash "${@}"
 }
 
 function psql {
   ## Connect to PostgreSQL with psql
-  docker-compose "${DC}" ${TTY} postgres psql -U "${APP_NAME}" "${@}"
+  _dc postgres psql -U "${APP_NAME}" "${@}"
 }
 
 function redis-cli {
   ## Connect to Redis with redis-cli
-  docker-compose "${DC}" ${TTY} redis redis-cli "${@}"
+  _dc redis redis-cli "${@}"
 }
 
 function bundle:install {
   ## Install Ruby dependencies and write out a lock file
-  docker-compose build
-  docker-compose run ${TTY} web bundle install
-  docker-compose down
+  _build_run_down web bundle install
 }
 
 function bundle:outdated {
   ## List any installed gems that are outdated
-  docker-compose "${DC}" ${TTY} web bundle outdated
+  _dc web bundle outdated
 }
 
 function yarn:install {
   ## Install Yarn dependencies and write out a lock file
-  docker-compose build
-  docker-compose run ${TTY} webpacker yarn install
-  docker-compose down
+  _build_run_down webpacker yarn install
 }
 
 function yarn:outdated {
   ## Install yarn dependencies and write lock file
-  docker-compose "${DC}" ${TTY} webpacker yarn outdated
-
+  _dc webpacker yarn outdated
 }
 
 function clean {
@@ -102,16 +113,16 @@ function ci:test {
   # to exist when running tests, we need to run our tests from the webpacker
   # container instead of the web container since the web container won't have
   # the packs in it.
-  docker-compose "${DC}" ${TTY} -e "RAILS_ENV=test" webpacker rails webpacker:compile
-  docker-compose "${DC}" ${TTY} webpacker rails test
+  _dc -e "RAILS_ENV=test" webpacker rails webpacker:compile
+  _dc webpacker rails test
 }
 
 function help {
-    printf "%s <task> [args]\n\nTasks:\n" "${0}"
+  printf "%s <task> [args]\n\nTasks:\n" "${0}"
 
-    compgen -A function | cat -n
+  compgen -A function | grep -v "^_" | cat -n
 
-    printf "\nExtended help:\n  Each task has comments for general usage\n"
+  printf "\nExtended help:\n  Each task has comments for general usage\n"
 }
 
 # This idea is heavily inspired by: https://github.com/adriancooney/Taskfile
