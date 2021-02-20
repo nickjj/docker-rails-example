@@ -27,7 +27,7 @@ services:
           memory: "${DOCKER_POSTGRES_MEMORY:-0}"
     env_file:
       - ".env"
-    image: "postgres:13.1"
+    image: "postgres:13.2"
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
     volumes:
@@ -41,7 +41,7 @@ services:
           memory: "${DOCKER_REDIS_MEMORY:-0}"
     env_file:
       - ".env"
-    image: "redis:6.0.9-buster"
+    image: "redis:6.0.10-buster"
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
     volumes:
