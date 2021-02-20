@@ -38,17 +38,17 @@ function redis-cli {
   docker-compose "${DC}" ${TTY} redis redis-cli "${@}"
 }
 
-function bundle {
+function bundle:install {
   ## Install Ruby dependencies and write out a lock file
   docker-compose build
-  docker-compose run ${TTY} web bundle "${@}"
+  docker-compose run ${TTY} web bundle install
   docker-compose down
 }
 
-function yarn {
+function yarn:install {
   ## Install Yarn dependencies and write out a lock file
   docker-compose build
-  docker-compose run ${TTY} webpacker yarn "${@}"
+  docker-compose run ${TTY} webpacker yarn install
   docker-compose down
 }
 

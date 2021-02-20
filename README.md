@@ -343,15 +343,17 @@ much appreciated!
 Let's say you've customized your app and it's time to make a change to your
 `Gemfile` or `package.json` file.
 
-Without Docker you'd normally run `bundle` or `yarn`. With Docker it's
-basically the same thing and since these commands are in our `Dockerfile` we
-can get away with doing a `docker-compose build` but don't run that just yet.
+Without Docker you'd normally run `bundle install` or `yarn install`. With
+Docker it's basically the same thing and since these commands are in our
+`Dockerfile` we can get away with doing a `docker-compose build` but don't run
+that just yet.
 
 #### In development:
 
-You'll want to run `./run bundle` or `./run yarn`. That'll make sure any lock
-files get copied from Docker's image (thanks to volumes) into your code repo
-and now you can commit those files to version control like usual.
+You'll want to run `./run bundle:install` or `./run yarn:install`. That'll make
+sure any lock files get copied from Docker's image (thanks to volumes) into
+your code repo and now you can commit those files to version control like
+usual.
 
 You can check out the `run` file to see what these commands do in more detail.
 

@@ -13,6 +13,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- `run bundle` task has been replaced with `run bundle:install` task
+- `run yarn` task has been replaced with `run yarn:install` task
 - Ping Redis as part of the `/up` health check
 - Rename `static` controller to `pages`
 - Call `rails s` instead of `puma -C config/puma.rb` in the Dockerfile CMD
