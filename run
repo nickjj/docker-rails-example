@@ -64,6 +64,12 @@ function bundle:outdated {
   _dc web bundle outdated
 }
 
+function bundle:update {
+  ## Update any installed gems that are outdated
+  _dc web bundle update
+  bundle:install
+}
+
 function yarn:install {
   ## Install Yarn dependencies and write out a lock file
   _build_run_down webpacker yarn install

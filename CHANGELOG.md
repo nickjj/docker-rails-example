@@ -11,6 +11,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Hotwire through Webpack
 - `run bundle:outdated` task to show outdated Ruby dependencies
+- `run bundle:update` task to update your Ruby dependencies
 - `run yarn:outdated` task to show outdated Node dependencies
 
 ### Changed
