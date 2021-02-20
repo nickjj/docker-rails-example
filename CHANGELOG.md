@@ -7,10 +7,6 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-### Fixed
-
-- Run `rails test` as part of the CI pipeline
-
 ### Added
 
 - Hotwire through Webpack
@@ -21,6 +17,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Rename `static` controller to `pages`
 - Call `rails s` instead of `puma -C config/puma.rb` in the Dockerfile CMD
 - Meta description to include the app being production ready
+
+### Fixed
+
+- Run `rails test` as part of the CI pipeline
 
 ### Removed
 
