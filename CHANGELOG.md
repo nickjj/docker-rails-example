@@ -16,6 +16,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Rename `DOCKER_WEB_PORT` to `DOCKER_WEB_PORT_FORWARD`
 - Rename `DOCKER_CABLE_PORT` to `DOCKER_CABLE_PORT_FORWARD`
+- Comment out Sidekiq's dashboard route by default for extra safety (check `config/routes.rb`)
 
 ### Removed
 

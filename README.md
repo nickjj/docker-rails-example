@@ -75,6 +75,7 @@ Dockerize an existing Rails app.
     - `.yarnc` sets a custom `node_modules/` directory
     - `config/initializers/assets.rb` references a custom `node_modules/` directory
     - `config/webpack/custom.js` references a custom `node_modules/` directory
+    - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety
 - **Public:**
     - Custom `502.html` and `maintenance.html` pages
     - Generate favicons using modern best practices
