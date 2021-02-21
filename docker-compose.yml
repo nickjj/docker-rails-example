@@ -61,7 +61,7 @@ services:
       start_period: "5s"
       retries: 3
     ports:
-      - "${DOCKER_WEB_PORT:-127.0.0.1:8000}:8000"
+      - "${DOCKER_WEB_PORT_FORWARD:-127.0.0.1:8000}:8000"
 
   worker:
     <<: *default-app
@@ -81,7 +81,7 @@ services:
           cpus: "${DOCKER_CABLE_CPUS:-0}"
           memory: "${DOCKER_CABLE_MEMORY:-0}"
     ports:
-      - "${DOCKER_CABLE_PORT:-127.0.0.1:28080}:28080"
+      - "${DOCKER_CABLE_PORT_FORWARD:-127.0.0.1:28080}:28080"
 
 volumes:
   postgres: {}

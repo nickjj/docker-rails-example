@@ -7,7 +7,19 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-- Nothing yet!
+### Added
+
+- `PORT` env variable to be compatible with more hosting providers
+- `CABLE_PORT` env variable to split out the bind port from the Docker port forward
+
+### Changed
+
+- Rename `DOCKER_WEB_PORT` to `DOCKER_WEB_PORT_FORWARD`
+- Rename `DOCKER_CABLE_PORT` to `DOCKER_CABLE_PORT_FORWARD`
+
+### Removed
+
+- Ability to customize puma bind host, it's hard coded to `0.0.0.0` now
 
 ## [0.2.0] - 2021-02-20
 
