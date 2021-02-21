@@ -20,23 +20,6 @@ jobs:
         run: |
           ./run ci:install-deps
 
-      # -----------------------------------------------------------------------
-      # Github Actions does not support Docker layer caching out of the box.
-      # This means every build will be 7+ minutes unless we cache things.
-      #
-      # We'll be using a 3rd party action to handle caching Docker layers.
-      #
-      # It's also recommended to pull images you need before caching since it
-      # ends up being faster than reading from the cache.
-      - name: "Pull required official Docker images before we cache layers"
-        run: |
-          cp --no-clobber .env.example .env
-          docker-compose pull postgres redis
-
-      - uses: "satackey/action-docker-layer-caching@v0.0.11"
-        continue-on-error: true
-      # -----------------------------------------------------------------------
-
       - name: "Test"
         run: |
           # Remove volumes in CI to avoid permission errors due to UID / GID.
