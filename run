@@ -28,6 +28,11 @@ function _build_run_down {
 
 # -----------------------------------------------------------------------------
 
+function cmd {
+  ## Run any command you want in the web container
+  _dc web "${@}"
+}
+
 function rails {
   ## Run any Rails commands
 
@@ -36,12 +41,12 @@ function rails {
     _dc -e "RAILS_ENV=test" webpacker rails webpacker:compile
   fi
 
-  _dc web rails "${@}"
+  cmd rails "${@}"
 }
 
 function bash {
   ## Start a Bash session in the web container
-  _dc web bash "${@}"
+  cmd bash "${@}"
 }
 
 function psql {
@@ -61,12 +66,12 @@ function bundle:install {
 
 function bundle:outdated {
   ## List any installed gems that are outdated
-  _dc web bundle outdated
+  cmd bundle outdated
 }
 
 function bundle:update {
   ## Update any installed gems that are outdated
-  _dc web bundle update
+  cmd bundle update
   bundle:install
 }
 
