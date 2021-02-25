@@ -53,6 +53,7 @@ out for something else on your own.
 - [Hotwire](https://hotwire.dev/)
 - [StimulusJS](https://stimulusjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [Heroicons](https://heroicons.dev/)
 
 ## Main changes vs a newly generated Rails app
 
