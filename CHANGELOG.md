@@ -19,6 +19,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Rename `DOCKER_CABLE_PORT` to `DOCKER_CABLE_PORT_FORWARD`
 - Comment out Sidekiq's dashboard route by default for extra safety (check `config/routes.rb`)
 - Refactor `run` script so all web container commands use the new `cmd` function
+- Replace `##` comments with `#` in the `run` script
 
 ### Removed
 

@@ -29,12 +29,12 @@ function _build_run_down {
 # -----------------------------------------------------------------------------
 
 function cmd {
-  ## Run any command you want in the web container
+  # Run any command you want in the web container
   _dc web "${@}"
 }
 
 function rails {
-  ## Run any Rails commands
+  # Run any Rails commands
 
   # We need to create the test packs before we run our tests.
   if [ "${1-''}" == "test" ]; then
