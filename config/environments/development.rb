@@ -74,7 +74,10 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # Enable the web-console for these IPs. This can't use the default value of
-  # localhost in Docker since Docker runs containers on its own local network.
-  config.web_console.allowed_ips = ENV.fetch('WEB_CONSOLE_ALLOWED_IPS') { '172.0.0.0/8' }.split(',')
+  # Comma separated list of IP addresses / CIDRs that can use the web-console
+  # which is invoked with `console` in a controller or <% console %> in a view.
+  #
+  # Docker supports a bunch of ranges so let's just support everything. This
+  # isn't insecure due to only running in development.
+  config.web_console.allowed_ips = ['0.0.0.0/0']
 end

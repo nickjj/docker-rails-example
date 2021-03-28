@@ -12,7 +12,6 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - `PORT` env variable to be compatible with more hosting providers
 - `CABLE_PORT` env variable to split out the bind port from the Docker port forward
 - `run cmd` to run any command you want in the web container, ie. `run cmd ruby --version`
-- `WEB_CONSOLE_ALLOWED_IPS` env variable to make the web console work with Docker in development
 
 ### Changed
 
@@ -21,6 +20,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Comment out Sidekiq's dashboard route by default for extra safety (check `config/routes.rb`)
 - Refactor `run` script so all web container commands use the new `cmd` function
 - Replace `##` comments with `#` in the `run` script
+
+### Fixed
+
+- Add Web Console support by configuring `web_console.allowed_ips` in `config/environments/development.rb`
 
 ### Removed
 
