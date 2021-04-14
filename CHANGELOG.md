@@ -20,6 +20,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Comment out Sidekiq's dashboard route by default for extra safety (check `config/routes.rb`)
 - Refactor `run` script so all web container commands use the new `cmd` function
 - Replace `##` comments with `#` in the `run` script
+- Replace `APP_NAME` in `run` script with `POSTGRES_USER` for connecting to psql
 
 ### Fixed
 
