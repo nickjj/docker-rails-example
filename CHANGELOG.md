@@ -24,6 +24,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 - Add Web Console support by configuring `web_console.allowed_ips` in `config/environments/development.rb`
+- Set an empty ENTRYPOINT for the worker and action cable to avoid race conditions when copying static files
 
 ### Removed
 

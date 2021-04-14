@@ -66,6 +66,7 @@ services:
   worker:
     <<: *default-app
     command: "sidekiq -C config/sidekiq.yml"
+    entrypoint: []
     deploy:
       resources:
         limits:
@@ -75,6 +76,7 @@ services:
   cable:
     <<: *default-app
     command: "puma -p 28080 cable/config.ru"
+    entrypoint: []
     deploy:
       resources:
         limits:
