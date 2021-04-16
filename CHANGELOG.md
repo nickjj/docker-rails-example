@@ -12,6 +12,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - `PORT` env variable to be compatible with more hosting providers
 - `CABLE_PORT` env variable to split out the bind port from the Docker port forward
 - `run cmd` to run any command you want in the web container, ie. `run cmd ruby --version`
+- `bin/rename-project` script to assist with renaming the project
 
 ### Changed
 
