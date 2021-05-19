@@ -23,6 +23,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Replace `##` comments with `#` in the `run` script
 - Replace `APP_NAME` in `run` script with `POSTGRES_USER` for connecting to psql
 - Update Ruby from `2.7.2` to `3.0.1`
+- Update Webpacker from `5.2` to `6.0-beta7`
+- Use new packs directory structure recommended by Webpacker 6
 
 ### Fixed
 

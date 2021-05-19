@@ -12,7 +12,7 @@ gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
+gem 'webpacker', '~> 6.0.0.beta.7'
 # Hotwire (HTML over the wire). Read more: https://hotwire.dev/
 gem 'turbo-rails', '~> 0.5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

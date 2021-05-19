@@ -7,9 +7,5 @@ import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import "stylesheets/tailwind/before.scss"
-import "stylesheets/application.scss"
-import "stylesheets/tailwind/after.scss"
-
 Rails.start()
 ActiveStorage.start()
