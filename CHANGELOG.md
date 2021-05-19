@@ -22,6 +22,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Refactor `run` script so all web container commands use the new `cmd` function
 - Replace `##` comments with `#` in the `run` script
 - Replace `APP_NAME` in `run` script with `POSTGRES_USER` for connecting to psql
+- Update Ruby from `2.7.2` to `3.0.1`
 
 ### Fixed
 
