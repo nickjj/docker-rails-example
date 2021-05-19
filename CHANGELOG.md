@@ -24,9 +24,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Replace `APP_NAME` in `run` script with `POSTGRES_USER` for connecting to psql
 - Update Ruby from `2.7.2` to `3.0.1`
 - Update Webpacker from `5.2` to `6.0-beta7`
+- Update TailwindCSS from `2.0.3` to `2.1.2`
+- Update TailwindCSS Stimulus Components from `2.1.2` to `2.2.0`
 - Update PostgreSQL from `13.2` to `13.3`
 - Update Redis from `6.0.10` to `6.2.3`
 - Use new packs directory structure recommended by Webpacker 6
+- Enable JIT compiler for TailwindCSS
 
 ### Fixed
 
