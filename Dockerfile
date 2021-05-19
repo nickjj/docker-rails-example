@@ -48,7 +48,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
   && useradd --create-home ruby \
-  && mkdir /public && chown ruby:ruby -R /public /app
+  && chown ruby:ruby -R /app
 
 USER ruby
 
