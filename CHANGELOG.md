@@ -33,6 +33,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Removed
 
 - Ability to customize puma bind host, it's hard coded to `0.0.0.0` now
+- Unnecessary `mkdir` and `chown` of `/public` in `Dockerfile`
 
 ## [0.2.0] - 2021-02-20
 
