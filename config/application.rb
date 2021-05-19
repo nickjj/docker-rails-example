@@ -35,3 +35,6 @@ module Hello
     config.action_cable.allowed_request_origins = origins
   end
 end
+
+# Ensure the TailwindCSS JIT compiler exits properly.
+Webpacker::Compiler.env["TAILWIND_MODE"] = "build"

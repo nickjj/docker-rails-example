@@ -29,6 +29,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update PostgreSQL from `13.2` to `13.3`
 - Update Redis from `6.0.10` to `6.2.3`
 - Use new packs directory structure recommended by Webpacker 6
+- Enable JIT compiler for TailwindCSS
 - Move `tailwind.config.js` to the root of the project
 
 ### Fixed
