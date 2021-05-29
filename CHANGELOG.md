@@ -11,6 +11,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update Puma from `5.3.1` to `5.3.2`
 
+### Fixed
+
+- Use multi-stage build to prevent `bundle install` from running multiple times [#8](https://github.com/nickjj/docker-rails-example/issues/8)
+
 ## [0.3.0] - 2021-05-19
 
 ### Added

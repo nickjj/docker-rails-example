@@ -52,16 +52,15 @@ RUN apt-get update \
 
 USER ruby
 
-COPY --chown=ruby:ruby Gemfile* ./
 COPY --chown=ruby:ruby bin/ ./bin
-
-RUN chmod 0755 bin/* && bundle install --jobs $(nproc)
+RUN chmod 0755 bin/*
 
 ARG RAILS_ENV="production"
 ENV RAILS_ENV="${RAILS_ENV}" \
     PATH="${PATH}:/home/ruby/.local/bin" \
     USER="ruby"
 
+COPY --chown=ruby:ruby --from=webpacker /usr/local/bundle /usr/local/bundle
 COPY --chown=ruby:ruby --from=webpacker /app/public /public
 COPY --chown=ruby:ruby . .
 
