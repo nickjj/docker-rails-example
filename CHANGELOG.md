@@ -18,6 +18,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Use multi-stage build to prevent `bundle install` from running multiple times [#8](https://github.com/nickjj/docker-rails-example/issues/8)
 - JS not executing due to `Gemfile.lock` referencing Webpacker `pre.2` not `beta.7`
+- `Gemfile` now correctly references Webpacker 6 beta 7
 
 ## [0.3.0] - 2021-05-19
 
