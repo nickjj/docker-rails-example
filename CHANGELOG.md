@@ -9,9 +9,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Update Rails from `6.1.3` to `6.1.4`
 - Update Puma from `5.3.1` to `5.3.2`
 - Update TailwindCSS from `2.1.2` to `2.2.4`
-- Update Turbo Rails from `7.0.0-beta.5` to `7.0.0-beta.7`
+- Update Turbo Rails from `7.0.0-beta.5` to `7.0.0-beta.8`
 
 ### Fixed
 
