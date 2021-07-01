@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A production ready example Rails app that's using Docker and Docker Compose.">
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= stylesheet_packs_with_chunks_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%= javascript_packs_with_chunks_tag 'application', 'data-turbo-track': 'reload' %>
 
     <%# Generated with: https://realfavicongenerator.net/ %>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
