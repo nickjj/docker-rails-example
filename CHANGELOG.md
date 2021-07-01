@@ -7,6 +7,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+- StimulusJS imports into `application.js`
+
 ### Changed
 
 - Update Rails from `6.1.3` to `6.1.4`
