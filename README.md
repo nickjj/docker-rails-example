@@ -50,8 +50,8 @@ out for something else on your own.
 ### Front-end
 
 - [Webpacker](https://github.com/rails/webpacker)
-- [Hotwire](https://hotwire.dev/)
-- [StimulusJS](https://stimulusjs.org/)
+- [Hotwire Turbo](https://hotwired.dev/)
+- [StimulusJS](https://stimulus.hotwired.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Heroicons](https://heroicons.com/)
 
