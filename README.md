@@ -13,7 +13,7 @@ For the Docker bits, everything included is an accumulation of Docker best
 practices based on building and deploying dozens of assorted Dockerized web
 apps since late 2014.
 
-**This app is using Rails 6.1.4 and Ruby 3.0.1**. The screenshot doesn't get
+**This app is using Rails 6.1.4 and Ruby 3.0.2**. The screenshot doesn't get
 updated every time I bump the versions:
 
 [![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)

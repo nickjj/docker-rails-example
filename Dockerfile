@@ -1,4 +1,4 @@
-FROM ruby:3.0.1-slim-buster AS webpacker
+FROM ruby:3.0.2-slim-buster AS webpacker
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
@@ -38,7 +38,7 @@ CMD ["bash"]
 
 #
 
-FROM ruby:3.0.1-slim-buster AS app
+FROM ruby:3.0.2-slim-buster AS app
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app

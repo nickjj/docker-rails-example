@@ -7,7 +7,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-- Nothing yet!
+### Changed
+
+#### Languages and services
+
+- Update `Ruby` to `3.0.2`
 
 ## [0.4.0] - 2021-07-01
 
