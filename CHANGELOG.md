@@ -13,6 +13,14 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `Ruby` to `3.0.2`
 
+#### Back-end dependencies
+
+- Update `bootsnap` to `1.7.7`
+- Update `listen` to `3.6.0`
+- Update `puma` to `5.4.0`
+- Update `redis` to `4.4.0`
+- Update `turbo-rails` to `0.6.0`
+
 ## [0.4.0] - 2021-07-01
 
 ### Added
