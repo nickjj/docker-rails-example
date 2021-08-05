@@ -21,6 +21,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `redis` to `4.4.0`
 - Update `turbo-rails` to `0.6.0`
 
+#### Front-end dependencies
+
+- Update `@hotwired/turbo-rails` to `7.0.0-rc.1`
+- Update `tailwindcss` to `2.2.7`
+
 ## [0.4.0] - 2021-07-01
 
 ### Added
