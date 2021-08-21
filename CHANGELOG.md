@@ -16,10 +16,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Back-end dependencies
 
 - Update `bootsnap` to `1.7.7`
-- Update `listen` to `3.6.0`
+- Update `listen` to `3.7.0`
 - Update `puma` to `5.4.0`
+- Update `rails` to `6.1.4.1`
 - Update `redis` to `4.4.0`
-- Update `turbo-rails` to `0.6.0`
+- Update `turbo-rails` to `0.7.4`
+- Update `webdrivers` to `4.6.1`
 
 #### Front-end dependencies
 
