@@ -11,7 +11,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Languages and services
 
-- Update `Ruby` to `3.0.2`
+- Update `Ruby` to `3.0.2` and switch to Debian Bullseye Slim
 
 #### Back-end dependencies
 

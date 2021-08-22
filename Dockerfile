@@ -1,4 +1,4 @@
-FROM ruby:3.0.2-slim-buster AS webpacker
+FROM ruby:3.0.2-slim-bullseye AS webpacker
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
@@ -36,9 +36,9 @@ RUN if [ "${RAILS_ENV}" != "development" ]; then \
 
 CMD ["bash"]
 
-#
+###############################################################################
 
-FROM ruby:3.0.2-slim-buster AS app
+FROM ruby:3.0.2-slim-bullseye AS app
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
