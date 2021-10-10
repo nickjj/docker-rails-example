@@ -1,0 +1,21 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+    - plan: heroku-redis
+      as: REDIS
+    - plan: heroku-redis
+      as: REDIS_CACHE
+  config:
+    S3_BUCKET: my-example-bucket
+build:
+  docker:
+    web: Dockerfile
+    worker: Dockerfile
+    cable: Dockerfile
+  config:
+    RAILS_ENV: production
+#release:
+#  web:
+#  worker:
+#  cable:
