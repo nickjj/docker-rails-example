@@ -7,6 +7,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Lint Dockerfile with <https://github.com/hadolint/hadolint>
+
 ### Changed
 
 #### Languages and services

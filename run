@@ -60,6 +60,12 @@ function redis-cli {
   _dc redis redis-cli "${@}"
 }
 
+function hadolint {
+  # Lint Dockerfile with hadolint
+  docker container run --rm -i \
+    hadolint/hadolint hadolint --ignore DL3008 "${@}" - < Dockerfile
+}
+
 function bundle:install {
   ## Install Ruby dependencies and write out a lock file
   _build_run_down web bundle install
@@ -106,6 +112,7 @@ function ci:test {
   #   - https://github.com/koalaman/shellcheck
   #   - https://github.com/nickjj/wait-until
   shellcheck run bin/docker-entrypoint-web
+  hadolint "${@}"
 
   cp --no-clobber .env.example .env
   cp --no-clobber docker-compose.override.yml.example docker-compose.override.yml
