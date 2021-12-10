@@ -13,6 +13,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Update `tailwind.config.js` based on the new TailwindCSS v3 defaults
+
 #### Languages and services
 
 - Update `Ruby` to `3.0.2` and switch to Debian Bullseye Slim
@@ -32,7 +34,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Front-end dependencies
 
 - Update `@hotwired/turbo-rails` to `7.0.0-rc.1`
-- Update `tailwindcss` to `2.2.7`
+- Update `tailwindcss` to `3.0.0`
 
 ## [0.4.0] - 2021-07-01
 
