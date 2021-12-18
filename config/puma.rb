@@ -1,5 +1,4 @@
-require "etc"
-
+# Specify the bind host and environment.
 bind "tcp://0.0.0.0:#{ENV.fetch("PORT") { "8000" }}"
 environment ENV.fetch("RAILS_ENV") { "production" }
 
@@ -28,5 +27,5 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 # process behavior so workers use less memory.
 preload_app!
 
-# Allow puma to be restarted by the `rails restart` command.
+# Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart

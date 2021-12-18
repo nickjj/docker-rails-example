@@ -9,13 +9,13 @@ Bundler.require(*Rails.groups)
 module Hello
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.0
 
     # Log to STDOUT because Docker expects all processes to log here. You could
     # then collect logs using journald, syslog or forward them somewhere else.
     logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
-    config.log_tags  = %i[subdomain uuid]
 
     # Set Redis as the back-end for the cache.
     config.cache_store = :redis_cache_store, {
@@ -35,6 +35,3 @@ module Hello
     config.action_cable.allowed_request_origins = origins
   end
 end
-
-# Ensure the TailwindCSS JIT compiler exits properly.
-Webpacker::Compiler.env["TAILWIND_MODE"] = "build"

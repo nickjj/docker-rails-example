@@ -1,19 +1,23 @@
+x-assets: &default-assets
+  build:
+    context: "."
+    target: "assets"
+    args:
+      - "RAILS_ENV=${RAILS_ENV:-production}"
+      - "NODE_ENV=${NODE_ENV:-production}"
+  env_file:
+    - ".env"
+  restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+  stop_grace_period: "3s"
+  tty: true
+  volumes:
+    - ".:/app"
+
 services:
-  webpacker:
-    build:
-      context: "."
-      target: "webpacker"
-      args:
-        - "RAILS_ENV=${RAILS_ENV:-production}"
-        - "NODE_ENV=${NODE_ENV:-production}"
-    command: "./bin/webpack --watch --progress --color"
-    depends_on:
-      - "postgres"
-      - "redis"
-    env_file:
-      - ".env"
-    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
-    stop_grace_period: "3s"
-    tty: true
-    volumes:
-      - ".:/app"
+  js:
+    <<: *default-assets
+    command: "yarn build --watch"
+
+  css:
+    <<: *default-assets
+    command: "yarn build:css --watch"

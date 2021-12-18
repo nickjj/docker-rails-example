@@ -34,13 +34,19 @@ function cmd {
 
 function rails {
   # Run any Rails commands
+  cmd rails "${@}"
+}
 
-  # We need to create the test packs before we run our tests.
-  if [ "${1-''}" == "test" ]; then
-    _dc -e "RAILS_ENV=test" webpacker rails webpacker:compile
+function test {
+  # Run your Rails tests, use `test -b` to first rebuild your JS and CSS
+  local run_build="${1}"
+  local test_command="rails test"
+
+  if [ "${run_build}" = "-b" ]; then
+    test_command="yarn build && yarn build:css && ${test_command}"
   fi
 
-  cmd rails "${@}"
+  _dc -e "RAILS_ENV=test" js bash -c "${test_command}"
 }
 
 function bash {
@@ -84,17 +90,17 @@ function bundle:update {
 
 function yarn:install {
   ## Install Yarn dependencies and write out a lock file
-  _build_run_down webpacker yarn install
+  _build_run_down js yarn install
 }
 
 function yarn:outdated {
   ## Install yarn dependencies and write lock file
-  _dc webpacker yarn outdated
+  _dc js yarn outdated
 }
 
 function clean {
   ## Remove cache and other machine generates files
-  rm -rf node_modules/ public/assets public/packs* tmp/* .byebug_history
+  rm -rf node_modules/ app/assets/builds/* public/assets tmp/* .byebug_history
 }
 
 function ci:install-deps {
@@ -127,13 +133,7 @@ function ci:test {
     psql -U ${POSTGRES_USER} ${POSTGRES_USER} -c 'SELECT 1'"
 
   rails db:setup
-
-  # Since we're running tests in CI without volumes and Rails needs the packs
-  # to exist when running tests, we need to run our tests from the webpacker
-  # container instead of the web container since the web container won't have
-  # the packs in it.
-  _dc -e "RAILS_ENV=test" webpacker rails webpacker:compile
-  _dc webpacker rails test
+  test -b
 }
 
 function help {
