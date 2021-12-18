@@ -14,7 +14,7 @@ practices](https://nickjanetakis.com/blog/best-practices-around-production-ready
 based on building and deploying dozens of assorted Dockerized web apps since
 late 2014.
 
-**This app is using Rails 6.1.4.1 and Ruby 3.0.2**. The screenshot doesn't get
+**This app is using Rails 7.0.0 and Ruby 3.0.3**. The screenshot doesn't get
 updated every time I bump the versions:
 
 [![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)
@@ -50,7 +50,7 @@ out for something else on your own.
 
 ### Front-end
 
-- [Webpacker](https://github.com/rails/webpacker)
+- [esbuild](https://esbuild.github.io/)
 - [Hotwire Turbo](https://hotwired.dev/)
 - [StimulusJS](https://stimulus.hotwired.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
@@ -62,11 +62,10 @@ Here's a run down on what's different. You can also use this as a guide to
 Dockerize an existing Rails app.
 
 - **Core**:
-    - Use PostgreSQL as the primary SQL database
+    - Use PostgreSQL (`-d postgresql)` as the primary SQL database
     - Use Redis as the cache back-end
     - Use Sidekiq as a background worker through Active Job
     - Use a standalone Action Cable process
-    - Use a standalone Webpack watcher process in development
 - **App Features**:
     - Add a `pages` controller with `home` and `up` (health check) actions
 - **Config**:
@@ -76,8 +75,12 @@ Dockerize an existing Rails app.
     - Rewrite `config/database.yml` to use environment variables
     - `.yarnc` sets a custom `node_modules/` directory
     - `config/initializers/assets.rb` references a custom `node_modules/` directory
-    - `config/webpack/custom.js` references a custom `node_modules/` directory
     - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety
+    - `Procifile.dev` has been removed since Docker Compose handles this for us
+- **Assets**:
+    - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
+    - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
+    - Add ActiveStorage JavaScript package
 - **Public:**
     - Custom `502.html` and `maintenance.html` pages
     - Generate favicons using modern best practices
@@ -146,16 +149,16 @@ in the `.env` file for the `DOCKER_WEB_PORT` variable to fix this.
 
 Visit <http://localhost:8000> in your favorite browser.
 
-Did you get a `Webpacker::Manifest::MissingEntryError` error? That means your
-Webpacker packs are still compiling. Give it a few more seconds and reload. It
-should self resolve.
-
 #### Running the test suite:
 
 ```sh
 # You can run this from the same terminal as before.
-./run rails test
+./run test
 ```
+
+You can also run `./run test -b` with does the same thing but builds your JS
+and CSS bundles. This could come in handy in CI or whenever you want to ensure
+the latest bundles have been built without visiting the page in a browser.
 
 #### Stopping everything:
 
@@ -264,7 +267,7 @@ adding custom changes.
 
 ```sh
 # You can run this from the same terminal as before.
-./run rails test
+./run test
 ```
 
 If everything passes now you can optionally `git add -A && git commit -m
