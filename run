@@ -100,7 +100,9 @@ function yarn:build {
   if [ "${NODE_ENV}" == "production" ]; then
     args=(--minify)
   else
-    args=(--sourcemap --watch)
+    if [ "${RAILS_ENV}" == "development" ]; then
+      args=(--sourcemap --watch)
+    fi
   fi
 
   esbuild app/javascript/*.* --outdir=app/assets/builds --bundle "${args[@]}"
@@ -113,7 +115,9 @@ function yarn:build:css {
   if [ "${NODE_ENV}" == "production" ]; then
     args=(--minify)
   else
-    args=(--watch)
+    if [ "${RAILS_ENV}" == "development" ]; then
+      args=(--watch)
+    fi
   fi
 
   tailwindcss --postcss \
