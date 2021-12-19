@@ -93,16 +93,19 @@ function yarn:install {
   _build_run_down js yarn install
 }
 
+function yarn:outdated {
+  ## Install yarn dependencies and write lock file
+  _dc js yarn outdated
+}
+
 function yarn:build {
   # Build JS assets, this is only meant to be referenced from your package.json
   local args=()
 
   if [ "${NODE_ENV}" == "production" ]; then
     args=(--minify)
-  else
-    if [ "${RAILS_ENV}" == "development" ]; then
-      args=(--sourcemap --watch)
-    fi
+  elif [ "${RAILS_ENV}" == "development" ]; then
+    args=(--sourcemap --watch)
   fi
 
   esbuild app/javascript/*.* --outdir=app/assets/builds --bundle "${args[@]}"
@@ -114,20 +117,13 @@ function yarn:build:css {
 
   if [ "${NODE_ENV}" == "production" ]; then
     args=(--minify)
-  else
-    if [ "${RAILS_ENV}" == "development" ]; then
-      args=(--watch)
-    fi
+  elif [ "${RAILS_ENV}" == "development" ]; then
+    args=(--watch)
   fi
 
   tailwindcss --postcss \
     -i ./app/assets/stylesheets/application.tailwind.css \
     -o ./app/assets/builds/application.css "${args[@]}"
-}
-
-function yarn:outdated {
-  ## Install yarn dependencies and write lock file
-  _dc js yarn outdated
 }
 
 function clean {
