@@ -25,8 +25,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `Ruby` to `3.0.3` and switch to Debian Bullseye Slim
 - Update `Node` to `16.x`
-- Update `PostgreSQL` to `14.0`
-- Update `Redis` to `6.2.6`
+- Update `PostgreSQL` to `14.1` and switch to Debian Bullseye Slim
+- Update `Redis` to `6.2.6` and switch to Debian Bullseye Slim
 
 #### Back-end dependencies
 
