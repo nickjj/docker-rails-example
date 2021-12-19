@@ -12,7 +12,7 @@
     "tailwindcss": "3.0.7"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
-    "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+    "build": "./run yarn:build",
+    "build:css": "./run yarn:build:css"
   }
 }

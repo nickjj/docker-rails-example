@@ -16,8 +16,8 @@ x-assets: &default-assets
 services:
   js:
     <<: *default-assets
-    command: "yarn build --watch"
+    command: "yarn build"
 
   css:
     <<: *default-assets
-    command: "yarn build:css --watch"
+    command: "yarn build:css"
