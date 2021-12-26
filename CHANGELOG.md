@@ -53,7 +53,6 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `@hotwired/stimulus` to `3.0.1`
 - Update `@hotwired/turbo-rails` to `7.1.0`
-- Update `@rails/activestorage` to `7.0.0`
 - Update `autoprefixer` `10.4.0`
 - Update `esbuild` `0.14.5`
 - Update `postcss-import` `14.0.2`
@@ -66,6 +65,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Deleting old assets in the Docker entrypoint (it's best to handle this out of band in a cron job, etc.)
 - Channel related JavaScript (this isn't added by default with Rails 7 and Hotwire is available now)
 - `tailwindcss-stimulus-components` front-end package
+- `@rails/activestorage` front-end package (you can always add it back if you use this feature)
 
 ## [0.4.0] - 2021-07-01
 
