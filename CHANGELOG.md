@@ -67,6 +67,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - `tailwindcss-stimulus-components` front-end package
 - `@rails/activestorage` front-end package (you can always add it back if you use this feature)
 
+### Fixed
+
+- Use `bundle exec sidekiq` instead of `sidekiq` which fixes issue https://github.com/nickjj/docker-rails-example/issues/30
+
 ## [0.4.0] - 2021-07-01
 
 ### Added

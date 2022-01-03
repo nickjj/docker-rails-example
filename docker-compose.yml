@@ -63,7 +63,7 @@ services:
 
   worker:
     <<: *default-app
-    command: "sidekiq -C config/sidekiq.yml"
+    command: "bundle exec sidekiq -C config/sidekiq.yml"
     entrypoint: []
     deploy:
       resources:
