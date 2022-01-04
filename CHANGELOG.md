@@ -69,7 +69,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 
-- Use `bundle exec sidekiq` instead of `sidekiq` which fixes issue https://github.com/nickjj/docker-rails-example/issues/30
+- Use `bundle exec sidekiq` instead of `sidekiq` which fixes [issue #30](https://github.com/nickjj/docker-rails-example/issues/30)
 
 ## [0.4.0] - 2021-07-01
 
