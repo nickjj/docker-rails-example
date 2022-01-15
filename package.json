@@ -4,11 +4,11 @@
   "dependencies": {
     "@hotwired/stimulus": "3.0.1",
     "@hotwired/turbo-rails": "7.1.0",
-    "autoprefixer": "10.4.0",
-    "esbuild": "0.14.5",
+    "autoprefixer": "10.4.2",
+    "esbuild": "0.14.11",
     "postcss": "8.4.5",
     "postcss-import": "14.0.2",
-    "tailwindcss": "3.0.7"
+    "tailwindcss": "3.0.15"
   },
   "scripts": {
     "build": "./run yarn:build",

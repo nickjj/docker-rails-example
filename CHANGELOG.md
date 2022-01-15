@@ -53,11 +53,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `@hotwired/stimulus` to `3.0.1`
 - Update `@hotwired/turbo-rails` to `7.1.0`
-- Update `autoprefixer` `10.4.0`
-- Update `esbuild` `0.14.5`
+- Update `autoprefixer` to `10.4.2`
+- Update `esbuild` to `0.14.11`
 - Update `postcss-import` `14.0.2`
 - Update `postcss` `8.4.5`
-- Update `tailwindcss` to `3.0.7`
+- Update `tailwindcss` to `3.0.15`
 
 ### Removed
 
