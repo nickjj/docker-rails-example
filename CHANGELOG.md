@@ -14,6 +14,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `sidekiq` to `6.4.0`
 - Update `turbo-rails` to `1.0.1`
 
+#### Front-end dependencies
+
+- Update `@hotwired/turbo-rails` to `7.1.1`
+- Update `esbuild` to `0.14.13`
+
 ## [0.5.0] - 2021-01-15
 
 ### Added
