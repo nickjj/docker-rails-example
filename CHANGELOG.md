@@ -7,7 +7,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-- Nothing yet!
+### Changed
+
+#### Back-end dependencies
+
+- Update `sidekiq` to `6.4.0`
+- Update `turbo-rails` to `1.0.1`
 
 ## [0.5.0] - 2021-01-15
 

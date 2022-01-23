@@ -69,8 +69,8 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
-    bootsnap (1.9.4)
-      msgpack (~> 1.0)
+    bootsnap (1.10.2)
+      msgpack (~> 1.2)
     builder (3.2.4)
     capybara (3.36.0)
       addressable
@@ -115,7 +115,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
-    msgpack (1.4.2)
+    msgpack (1.4.4)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -181,7 +181,7 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    sidekiq (6.3.1)
+    sidekiq (6.4.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -197,7 +197,7 @@ GEM
     strscan (3.0.1)
     thor (1.2.1)
     timeout (0.2.0)
-    turbo-rails (1.0.0)
+    turbo-rails (1.0.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.4)
@@ -234,7 +234,7 @@ DEPENDENCIES
   rails (~> 7.0.1)
   redis (~> 4.0)
   selenium-webdriver
-  sidekiq (~> 6.3)
+  sidekiq (~> 6.4)
   sprockets-rails
   stimulus-rails
   turbo-rails
