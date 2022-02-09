@@ -11,7 +11,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Back-end dependencies
 
-- Update `sidekiq` to `6.4.0`
+- Update `pg` to `1.3.1`
+- Update `puma` to `5.6.1`
+- Update `rails` to `7.0.2`
+- Update `redis` to `4.6.0`
+- Update `sidekiq` to `6.4.1`
 - Update `turbo-rails` to `1.0.1`
 
 #### Front-end dependencies
