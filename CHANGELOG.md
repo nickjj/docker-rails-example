@@ -9,6 +9,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+#### Languages and services
+
+- Update `Ruby` to `3.1.1`
+
 #### Back-end dependencies
 
 - Update `pg` to `1.3.1`
