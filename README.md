@@ -261,6 +261,11 @@ docker-compose up --build
 ./run rails db:setup
 ```
 
+*If you get an error upping the project related to `RuntimeError: invalid
+bytecode` then you have old `tmp/` files sitting around related to the old
+project name, you can run `./run clean` to clear all temporary files and fix
+the error.*
+
 #### Sanity check to make sure the tests still pass:
 
 It's always a good idea to make sure things are in a working state before
