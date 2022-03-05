@@ -9,6 +9,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Refactor `/up/` endpoint into its own controller and add `/up/databases` as a second URL
+
 #### Languages and services
 
 - Update `Ruby` to `3.1.1`

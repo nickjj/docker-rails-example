@@ -67,7 +67,8 @@ Dockerize an existing Rails app.
     - Use Sidekiq as a background worker through Active Job
     - Use a standalone Action Cable process
 - **App Features**:
-    - Add a `pages` controller with `home` and `up` (health check) actions
+    - Add a `pages` controller with a `home` action
+    - Add an `up` controller with a 2 health check related actions
 - **Config**:
     - Log to STDOUT so that Docker can consume and deal with log output 
     - Credentials are removed (secrets are loaded in with an `.env` file)
