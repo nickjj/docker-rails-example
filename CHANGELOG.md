@@ -7,6 +7,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+- `config/initializers/rack_mini_profiler.rb` to enable profiling Hotwire Turbo Drive
+
 ### Changed
 
 - Refactor `/up/` endpoint into its own controller and add `/up/databases` as a second URL
