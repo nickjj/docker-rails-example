@@ -23,8 +23,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Back-end dependencies
 
 - Update `jsbundling-rails` to `1.0.2`
-- Update `pg` to `1.3.4`
-- Update `puma` to `5.6.1`
+- Update `pg` to `1.3.5`
+- Update `puma` to `5.6.4`
 - Update `rack-mini-profiler` to `3.0.0`
 - Update `rails` to `7.0.2`
 - Update `redis` to `4.6.0`
