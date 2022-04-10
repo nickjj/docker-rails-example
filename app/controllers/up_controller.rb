@@ -4,7 +4,7 @@ class UpController < ApplicationController
   end
 
   def databases
-    Redis.current.ping
+    $redis.ping
     ActiveRecord::Base.connection.execute("SELECT 1")
 
     head :ok
