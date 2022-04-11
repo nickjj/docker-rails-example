@@ -4,9 +4,15 @@ class UpController < ApplicationController
   end
 
   def databases
-    $redis.ping
+    redis&.ping
     ActiveRecord::Base.connection.execute("SELECT 1")
 
     head :ok
+  end
+
+  private
+
+  def redis
+    Rails.cache.try(:redis)
   end
 end
