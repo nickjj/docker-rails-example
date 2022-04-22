@@ -28,7 +28,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `rack-mini-profiler` to `3.0.0`
 - Update `rails` to `7.0.2`
 - Update `redis` to `4.6.0`
-- Update `sidekiq` to `6.4.1`
+- Update `sidekiq` to `6.4.2`
 - Update `stimulus-rails` to `1.0.4`
 - Update `turbo-rails` to `1.0.1`
 
