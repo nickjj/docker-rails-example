@@ -14,6 +14,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `PostgreSQL` to `14.3`
 - Update `Redis` to `7.0.1`
 
+#### Back-end dependencies
+
+- Update `sidekiq` to `6.5.0`
+- Update `turbo-rails` to `1.1.1`
+
 ## [0.6.0] - 2022-05-15
 
 ### Added
