@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -o errexit
+set -o pipefail
+set -o nounset
 
 DC="${DC:-exec}"
 
@@ -39,7 +41,7 @@ function rails {
 
 function test {
   # Run your Rails tests, use `test -b` to first rebuild your JS and CSS
-  local run_build="${1}"
+  local run_build="${1:-}"
   local test_command="rails test"
 
   if [ "${run_build}" = "-b" ]; then
@@ -102,9 +104,9 @@ function yarn:build {
   # Build JS assets, this is only meant to be referenced from your package.json
   local args=()
 
-  if [ "${NODE_ENV}" == "production" ]; then
+  if [ "${NODE_ENV:-}" == "production" ]; then
     args=(--minify)
-  elif [ "${RAILS_ENV}" == "development" ]; then
+  elif [ "${RAILS_ENV:-}" == "development" ]; then
     args=(--sourcemap --watch)
   fi
 
@@ -115,9 +117,9 @@ function yarn:build:css {
   # Build CSS assets, this is only meant to be referenced from your package.json
   local args=()
 
-  if [ "${NODE_ENV}" == "production" ]; then
+  if [ "${NODE_ENV:-}" == "production" ]; then
     args=(--minify)
-  elif [ "${RAILS_ENV}" == "development" ]; then
+  elif [ "${RAILS_ENV:-}" == "development" ]; then
     args=(--watch)
   fi
 
