@@ -11,7 +11,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Languages and services
 
-- Update `PostgreSQL` to `14.4`
+- Update `PostgreSQL` to `14.5`
 - Update `Redis` to `7.0.2`
 
 #### Back-end dependencies
