@@ -18,10 +18,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `cssbundling-rails` to `1.1.1`
 - Update `jsbundling-rails` to `1.0.3`
-- Update `sidekiq` to `6.5.0`
-- Update `pg` to `1.4.1`
+- Update `pg` to `1.4.3`
 - Update `redis` to `4.7.1`
-- Update `sidekiq` to `6.5.1`
+- Update `sidekiq` to `6.5.4`
+- Update `stimulus-rails` to `1.1.0`
 - Update `turbo-rails` to `1.1.1`
 
 #### Front-end dependencies
