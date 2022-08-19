@@ -47,6 +47,7 @@ out for something else on your own.
 - [Sidekiq](https://github.com/mperham/sidekiq)
 - [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html)
 - [ERB](https://guides.rubyonrails.org/layouts_and_rendering.html)
+- [MailCatcher](https://mailcatcher.me/)
 
 ### Front-end
 
@@ -325,6 +326,14 @@ in your `Gemfile` you can run `./run bundle:update` which will install the
 latest versions of your gems and then write out a new lock file.
 
 You can check out the `run` file to see what these commands do in more detail.
+
+If you want to check that your mailing is working and that the emails are integrated
+You can use mailcatcher
+To do this, you must enter this value 
+`config.action_mailer.smtp_settings = { address: ENV.fetch("SMTP_DOMAIN"), 
+port: ENV.fetch("SMTP_PORT"), domain: ENV.fetch("SMTP_DOMAIN") }`
+in the file `config/environments/development.rb`
+
 
 #### In CI:
 

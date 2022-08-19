@@ -45,6 +45,16 @@ services:
     volumes:
       - "redis:/data"
 
+  mailcatcher:
+    restart: on-failure:10
+    image: stpaquet/alpinemailcatcher:latest
+    environment:
+      - MAIL_LIMIT=70 # docker image default is 50
+      - TIMEZONE=Europe/Paris # docker image default is UTC
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+
   web:
     <<: *default-app
     deploy:
