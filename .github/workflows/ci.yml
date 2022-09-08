@@ -25,6 +25,9 @@ jobs:
           # Remove volumes in CI to avoid permission errors due to UID / GID.
           sed -i "s|.:/app|/tmp:/tmp|g" .env*
 
+          # This is temporary to see if recent CI failures are due to Docker Compose v1.
+          which docker-compose && sudo rm -rf $_
+
           ./run ci:test
         env:
           DOCKER_BUILDKIT: "1"
