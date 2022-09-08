@@ -27,5 +27,3 @@ jobs:
           sed -i "s|.:/app|/tmp:/tmp|g" docker-compose.yml
 
           ./run ci:test
-        env:
-          DOCKER_BUILDKIT: "1"
