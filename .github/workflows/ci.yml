@@ -28,6 +28,7 @@ jobs:
           # This is temporary to help debug why CI is failing.
           which docker-compose && sudo rm -rf $_
           docker compose version
+          cp --no-clobber .env.example .env
           docker compose config
           id
           cat .env
