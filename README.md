@@ -117,7 +117,7 @@ these commands for PowerShell if you want.
 git clone https://github.com/nickjj/docker-rails-example hellorails
 cd hellorails
 
-# Optionally checkout a specific tag, such as: git checkout 0.6.0
+# Optionally checkout a specific tag, such as: git checkout 0.7.0
 ```
 
 #### Copy an example .env file because the real one is git ignored:
