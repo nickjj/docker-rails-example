@@ -6,4 +6,12 @@ set -e
 # into your volume persisted public directory.
 cp -r /public /app
 
+# Sprockets will use the first sprockets file it finds not the latest one. We
+# need to delete all of the old sprockets files except for the one that was
+# last built into the image. That's what the command below does.
+find \
+  /app/public/assets/.sprockets-manifest-*.json \
+  -type f ! -name "$(basename /public/assets/.sprockets-manifest-*.json)" \
+  -delete
+
 exec "$@"

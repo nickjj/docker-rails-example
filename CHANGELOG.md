@@ -11,6 +11,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Rename `run bash` to `run shell`
 
+### Fixed
+
+- Assets in production mode were using the wrong `.sprockets-manifest-XXX.json` file, `bin/docker-entrypoint-web` was adjusted to delete all but the last built version since Rails doesn't pick the latest file based on `mtime`
+
 ## [0.7.0] - 2022-09-08
 
 ### Added
