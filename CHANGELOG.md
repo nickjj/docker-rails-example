@@ -7,7 +7,9 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-- Nothing yet!
+### Changed
+
+- Rename `run bash` to `run shell`
 
 ## [0.7.0] - 2022-09-08
 
