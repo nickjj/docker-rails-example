@@ -16,6 +16,15 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `Redis` to `7.0.5`
 
+#### Back-end dependencies
+
+- Update `minitest` to `5.16.3`
+- Update `puma` to `5.6.5`
+- Update `rails` to `7.0.4`
+- Update `redis` to `4.8.0`
+- Update `sidekiq` to `6.5.7`
+- Update `turbo-rails` to `1.3.0`
+
 ### Fixed
 
 - Assets in production mode were using the wrong `.sprockets-manifest-XXX.json` file, `bin/docker-entrypoint-web` was adjusted to delete all but the last built version since Rails doesn't pick the latest file based on `mtime`
