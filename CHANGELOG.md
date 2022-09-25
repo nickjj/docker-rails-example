@@ -25,6 +25,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `sidekiq` to `6.5.7`
 - Update `turbo-rails` to `1.3.0`
 
+#### Front-end dependencies
+
+- Update `@hotwired/turbo-rails` to `7.2.0`
+- Update `esbuild` to `0.15.9`
+- Update `postcss-import` to `15.0.0`
+
 ### Fixed
 
 - Assets in production mode were using the wrong `.sprockets-manifest-XXX.json` file, `bin/docker-entrypoint-web` was adjusted to delete all but the last built version since Rails doesn't pick the latest file based on `mtime`
