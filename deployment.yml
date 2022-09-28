@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: railsapp
+  name: rails-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: railsapp
+  template:
+    metadata:
+      labels:
+        app: railsapp
+    spec:
+      containers:
+      - image: railsapp
+        name: shabbirsaifee/railsapp:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: railsapp
+spec:
+  selector:
+    app: rails-deployment
+  ports:
+  - port: 80
+    targetPort: 80
