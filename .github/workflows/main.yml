@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    name: Building and Pushing the Image
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Connect to container registry (dockerhub)
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+       docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+    - name: Build, tag and push image
+      run: |
+        # Build a docker container and push it to CR
+        git_hash=$(git rev-parse --short "$GITHUB_SHA")
+        docker build -t shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash .
+        echo "Pushing image to CR..."
+        docker push shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash
+        echo "::set-output name=image::shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash"
