@@ -3,6 +3,9 @@ LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
 
+ARG UID=1000
+ARG GID=1000
+
 RUN bash -c "set -o pipefail && apt-get update \
   && apt-get install -y --no-install-recommends build-essential curl git libpq-dev \
   && curl -sSL https://deb.nodesource.com/setup_16.x | bash - \
@@ -11,7 +14,8 @@ RUN bash -c "set -o pipefail && apt-get update \
   && apt-get update && apt-get install -y --no-install-recommends nodejs yarn \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
-  && useradd --create-home ruby \
+  && groupadd -g \"${GID}\" ruby \
+  && useradd --create-home --no-log-init -u \"${UID}\" -g \"${GID}\" ruby \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules /app"
 
 USER ruby
@@ -43,11 +47,15 @@ LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
 
+ARG UID=1000
+ARG GID=1000
+
 RUN apt-get update \
   && apt-get install -y --no-install-recommends build-essential curl libpq-dev \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
-  && useradd --create-home ruby \
+  && groupadd -g "${GID}" ruby \
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ruby \
   && chown ruby:ruby -R /app
 
 USER ruby
