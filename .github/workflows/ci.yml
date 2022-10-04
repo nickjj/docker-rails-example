@@ -30,7 +30,7 @@ jobs:
         echo "::set-output name=image::shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash"
 
     - name: Trigger Azure Devops Pipeline
-      uses: Azure/pipelines@v1
+      uses: Azure/pipelines@v1.2
       with:
         azure-devops-project-url: 'https://dev.azure.com/ssaifee1992/azure-devops-kubernetes'
         azure-pipeline-name: 'control' # name of the Azure pipeline to be triggered
