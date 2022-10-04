@@ -25,4 +25,13 @@ jobs:
         docker build -t shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash .
         echo "Pushing image to CR..."
         docker push shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash
+        echo "::set-env name=IMAGE_TAG::${GITHUB_REF##*/}-$git_hash"
         echo "::set-output name=image::shabbirsaifee/railsapp:${GITHUB_REF##*/}-$git_hash"
+
+    - name: Trigger Azure Devops Pipeline
+      uses: Azure/pipelines@v1
+      with:
+        azure-devops-project-url: 'https://dev.azure.com/ssaifee1992/azure-devops-kubernetes'
+        azure-pipeline-name: 'control' # name of the Azure pipeline to be triggered
+        azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
+        azure-pipeline-variables:  '{"tag": "$IMAGE_TAG"}' # optional stringified json
