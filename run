@@ -39,7 +39,7 @@ function rails {
   cmd rails "${@}"
 }
 
-function test {
+function rspec {
   # Run your Rails tests, use `test -b` to first rebuild your JS and CSS
   local run_build="${1:-}"
   local test_command="rails test"

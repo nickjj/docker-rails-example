@@ -1,0 +1,211 @@
+require: rubocop-rails
+
+inherit_mode:
+  merge:
+    - Exclude
+
+Rails:
+  Enabled: true
+
+AllCops:
+  # Display all verbose info on failures to help people triage how to fix
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  # Enable all NewCops by default (Even new 1.x cops)
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.0
+  # Don't lint package files
+  Exclude:
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - '**/*/Brewfile'
+
+# More flexible array alignment
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+# More flexible hash alignment
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+# TODO: Check when rubocop updated
+# Disabled due to "can't modify frozen Array" error
+Layout/LineLength:
+  Enabled: false
+
+# We have a linelength of 140 characters across the codebase/s
+# Layout/LineLength:
+#   Max: 140
+#   Exclude:
+#     - '^Given'
+#     - '^When'
+#     - '^Then'
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/DuplicateBranch:
+  Exclude:
+    - 'lib/**/*'
+    - 'features/**/*'
+
+Lint/DuplicateCaseCondition:
+  Exclude:
+    - 'features/**/*'
+
+Lint/EmptyBlock:
+  Exclude:
+    - 'lib/tasks/**/*'
+    - 'spec/**/*'
+    - 'features/**/*'
+
+Lint/ToEnumArguments:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - 'features/step_definitions/**/*'
+
+Metrics/AbcSize:
+  Max: 21
+  Exclude:
+    - 'db/migrate/*'
+    - 'lib/**/*'
+    - 'spec/**/*'
+    - 'features/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*'
+    - 'db/migrate/*'
+    - 'features/**/*'
+    - 'lib/**/*'
+    - 'smoke/**/*'
+    - 'spec/**/*'
+    - '**/*.json.jbuilder'
+    - 'db/schema.rb'
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - 'app/queries/*'
+    - 'app/services/*'
+    - 'db/migrate/*'
+    - 'lib/**/*'
+    - 'smoke/**/*'
+    - 'spec/**/*'
+    - 'features/**/*'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'app/constants/*'
+    - 'app/helpers/*'
+
+Metrics/PerceivedComplexity:
+  Max: 9
+
+# Allow method names starting with get or set, as we use some DSL's
+Naming/AccessorMethodName:
+  Enabled: false
+
+#Naming/InclusiveLanguage:
+#  FlaggedTerms: { master: { AllowedRegex: "master" } }
+
+# Underscores are used to differentiate memoized variables
+# from instance variables that are used in view files
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: false
+
+# This affects naming conventions used in tests and table names
+Naming/VariableNumber:
+  Enabled: false
+
+# Migrations using `change_table` with `bulk: true` can improve some db platform migration performance
+# but it also introduces some other issues as it does not support all features that add_column,
+# remove_column have. Disable it and write standard, consistent migrations.
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+
+Rails/FilePath:
+  EnforcedStyle: 'slashes'
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/Inquiry:
+  Enabled: false
+
+# This does not work if the sql contains comments
+Rails/SquishedSQLHeredocs:
+  Exclude:
+    - 'db/migrate/*'
+
+# Rails/NotNullColumn: Do not add a NOT NULL column without a default value.
+# This was disabled via inline comments in migration files prior to June 2021
+Rails/NotNullColumn:
+  Exclude:
+    - 'db/migrate/*'
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'db/migrate/*'
+    - 'features/**/*'
+    - 'spec/**/*'
+
+Style/CombinableLoops:
+  Exclude:
+    - 'db/migrate/*'
+
+# We don't enforce documentation comments on Modules/Classes
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+# Prefer simple looking "template" style tokens like `%{name}`, `%{age}`
+Style/FormatStringToken:
+  EnforcedStyle: template
+
+Style/MissingRespondToMissing:
+  Exclude:
+    - 'lib/load_tests/**/*'
+
+Style/MultilineBlockChain:
+  Exclude:
+    - 'spec/**/*'
+    - 'features/**/*'
+
+Style/RedundantArgument:
+  Exclude:
+    - 'features/**/*'
+
+Style/RedundantParentheses:
+  Exclude:
+    - 'features/**/*'
+
+Style/SymbolArray:
+  Enabled: false

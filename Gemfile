@@ -51,17 +51,28 @@ group :development, :test do
 
   # Reduces boot times through caching; required in config/boot.rb
   gem "bootsnap", require: false
+
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'rspec-rails'
+  gem 'rubocop-rails', require: false
+  gem 'rubycritic'
+  gem 'brakeman'
+  gem 'bundler-audit'
+  gem 'simplecov', require: false
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'annotate'
+  gem 'listen'
+  gem 'readapt'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -69,4 +80,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'database_cleaner-active_record'
+  gem 'rspec-sidekiq'
+  gem 'shoulda-matchers', '~> 5.0'
 end

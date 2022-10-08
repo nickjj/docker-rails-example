@@ -2,22 +2,22 @@
 
 ![CI](https://github.com/nickjj/docker-rails-example/workflows/CI/badge.svg?branch=main)
 
-You could use this example app as a base for your new project or as a guide to
-Dockerize your existing Rails app.
+The idea is to use this is a template of dockerized rails app to be used both for development. 
+Gradually I will make adjustments to include the deployment process as well.
 
-The example app is minimal but it wires up a number of things you might use in
-a real world Rails app, but at the same time it's not loaded up with a million
-personal opinions.
+This template if a fork of https://github.com/nickjj/docker-rails-example
+
+The template app is minimal but it wires up a number of things you might use in
+a real world Rails app and I have added some personal preferred configurations:
+
+- RSpec for testing
+- Changed the health check to fix the Redis warning
+
 
 For the Docker bits, everything included is an accumulation of [Docker best
 practices](https://nickjanetakis.com/blog/best-practices-around-production-ready-web-apps-with-docker-compose)
 based on building and deploying dozens of assorted Dockerized web apps since
 late 2014.
-
-**This app is using Rails 7.0.4 and Ruby 3.1.2**. The screenshot doesn't get
-updated every time I bump the versions:
-
-[![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)
 
 ## Table of contents
 
