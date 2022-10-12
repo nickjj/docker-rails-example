@@ -24,6 +24,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Back-end dependencies
 
 - Update `minitest` to `5.16.3`
+- Update `pg` to `1.4.4`
 - Update `puma` to `5.6.5`
 - Update `rails` to `7.0.4`
 - Update `redis` to `4.8.0`
