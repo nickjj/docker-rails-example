@@ -14,6 +14,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Replace `Redis.current` (removed in `redis` 5.0+) with `RedisClient.current` which is in `config/initializers/redis.rb`
 - Rename `run bash` to `run shell`
 - Reference `PORT` variable in the `docker-compose.yml` web service instead of hard coding `8000`
 
