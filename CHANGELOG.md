@@ -36,11 +36,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Front-end dependencies
 
-- Update `@hotwired/turbo-rails` to `7.2.0`
-- Update `autoprefixer` to `10.4.12`
-- Update `esbuild` to `0.15.10`
+- Update `@hotwired/turbo-rails` to `7.24`
+- Update `autoprefixer` to `10.4.13`
+- Update `esbuild` to `0.15.12`
 - Update `postcss-import` to `15.0.0`
-- Update `postcss` to `8.4.17`
+- Update `postcss` to `8.4.18`
+- Update `tailwindcss` to `3.2.1`
 
 ### Fixed
 
