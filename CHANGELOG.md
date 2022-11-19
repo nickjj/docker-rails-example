@@ -46,6 +46,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `postcss` to `8.4.19`
 - Update `tailwindcss` to `3.2.4`
 
+### Removed
+
+- `set -o nounset` from `run` script since it's incompatible with Bash 3.2 (default on macOS)
+
 ### Fixed
 
 - Assets in production mode were using the wrong `.sprockets-manifest-XXX.json` file, `bin/docker-entrypoint-web` was adjusted to delete all but the last built version since Rails doesn't pick the latest file based on `mtime`
