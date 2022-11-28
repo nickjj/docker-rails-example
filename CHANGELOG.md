@@ -33,12 +33,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `rails` to `7.0.4`
 - Update `redis` to `5.0.2`
 - Update `sidekiq` to `7.0.1`
-- Update `stimulus-rails` to `1.1.1`
+- Update `stimulus-rails` to `1.2.0`
 - Update `turbo-rails` to `1.3.2`
 
 #### Front-end dependencies
 
-- Update `@hotwired/stimulus` to `3.1.1`
+- Update `@hotwired/stimulus` to `3.2.0`
 - Update `@hotwired/turbo-rails` to `7.24`
 - Update `autoprefixer` to `10.4.13`
 - Update `esbuild` to `0.15.14`
