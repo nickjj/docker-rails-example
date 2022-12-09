@@ -39,11 +39,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Front-end dependencies
 
-- Update `@hotwired/stimulus` to `3.2.0`
+- Update `@hotwired/stimulus` to `3.2.1`
 - Update `@hotwired/turbo-rails` to `7.24`
 - Update `autoprefixer` to `10.4.13`
-- Update `esbuild` to `0.15.14`
-- Update `postcss-import` to `15.0.0`
+- Update `esbuild` to `0.16.3`
+- Update `postcss-import` to `15.1.0`
 - Update `postcss` to `8.4.19`
 - Update `tailwindcss` to `3.2.4`
 
