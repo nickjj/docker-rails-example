@@ -52,6 +52,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Removed
 
 - `set -o nounset` from `run` script since it's incompatible with Bash 3.2 (default on macOS)
+- `--jobs "$(nproc)"` from the `bundle install` command in the `Dockerfile` since this is the default
 
 ### Fixed
 

@@ -21,7 +21,7 @@ RUN bash -c "set -o pipefail && apt-get update \
 USER ruby
 
 COPY --chown=ruby:ruby Gemfile* ./
-RUN bundle install --jobs "$(nproc)"
+RUN bundle install
 
 COPY --chown=ruby:ruby package.json *yarn* ./
 RUN yarn install
