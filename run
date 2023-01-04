@@ -56,14 +56,14 @@ function shell {
 }
 
 function psql {
-  ## Connect to PostgreSQL with psql
+  # Connect to PostgreSQL with psql
   # shellcheck disable=SC1091
   . .env
  _dc postgres psql -U "${POSTGRES_USER}" "${@}"
 }
 
 function redis-cli {
-  ## Connect to Redis with redis-cli
+  # Connect to Redis with redis-cli
   _dc redis redis-cli "${@}"
 }
 
@@ -74,28 +74,28 @@ function hadolint {
 }
 
 function bundle:install {
-  ## Install Ruby dependencies and write out a lock file
+  # Install Ruby dependencies and write out a lock file
   _build_run_down web bundle install
 }
 
 function bundle:outdated {
-  ## List any installed gems that are outdated
+  # List any installed gems that are outdated
   cmd bundle outdated
 }
 
 function bundle:update {
-  ## Update any installed gems that are outdated
+  # Update any installed gems that are outdated
   cmd bundle update
   bundle:install
 }
 
 function yarn:install {
-  ## Install Yarn dependencies and write out a lock file
+  # Install Yarn dependencies and write out a lock file
   _build_run_down js yarn install
 }
 
 function yarn:outdated {
-  ## Install yarn dependencies and write lock file
+  # Install yarn dependencies and write lock file
   _dc js yarn outdated
 }
 
@@ -128,7 +128,7 @@ function yarn:build:css {
 }
 
 function clean {
-  ## Remove cache and other machine generates files
+  # Remove cache and other machine generates files
   rm -rf node_modules/ app/assets/builds/* public/assets tmp/* .byebug_history
 }
 
