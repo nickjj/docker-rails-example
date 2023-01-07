@@ -47,7 +47,7 @@ function test {
     test_command="yarn build && yarn build:css && ${test_command}"
   fi
 
-  _dc -e "RAILS_ENV=test" js bash -c "${test_command}"
+  _dc js bash -c "${test_command}"
 }
 
 function shell {
