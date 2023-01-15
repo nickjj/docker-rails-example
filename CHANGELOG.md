@@ -30,12 +30,12 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `cssbundling-rails` to `1.1.2`
 - Update `jsbundling-rails` to `1.1.1`
-- Update `minitest` to `5.16.3`
+- Update `minitest` to `5.17.0`
 - Update `pg` to `1.4.5`
-- Update `puma` to `6.0.1`
+- Update `puma` to `6.0.2`
 - Update `rails` to `7.0.4`
 - Update `redis` to `5.0.2`
-- Update `sidekiq` to `7.0.2`
+- Update `sidekiq` to `7.0.3`
 - Update `stimulus-rails` to `1.2.1`
 - Update `turbo-rails` to `1.3.2`
 
