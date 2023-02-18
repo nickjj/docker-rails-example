@@ -44,10 +44,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `@hotwired/stimulus` to `3.2.1`
 - Update `@hotwired/turbo-rails` to `7.25`
 - Update `autoprefixer` to `10.4.13`
-- Update `esbuild` to `0.17.7`
+- Update `esbuild` to `0.17.8`
 - Update `postcss-import` to `15.1.0`
 - Update `postcss` to `8.4.21`
-- Update `tailwindcss` to `3.2.4`
+- Update `tailwindcss` to `3.2.7`
 
 ### Removed
 
