@@ -33,9 +33,9 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `minitest` to `5.18.0`
 - Update `pg` to `1.4.6`
 - Update `puma` to `6.1.1`
-- Update `rails` to `7.0.4.2`
+- Update `rails` to `7.0.4.3`
 - Update `redis` to `5.0.6`
-- Update `sidekiq` to `7.0.6`
+- Update `sidekiq` to `7.0.7`
 - Update `stimulus-rails` to `1.2.1`
 - Update `turbo-rails` to `1.4.0`
 
