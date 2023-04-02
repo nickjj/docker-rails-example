@@ -78,7 +78,7 @@ Dockerize an existing Rails app.
     - `config/initializers/rack_mini_profiler.rb` to enable profiling Hotwire Turbo Drive
     - `config/initializers/assets.rb` references a custom `node_modules/` directory
     - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety
-    - `Procifile.dev` has been removed since Docker Compose handles this for us
+    - `Procfile.dev` has been removed since Docker Compose handles this for us
 - **Assets**:
     - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
     - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
