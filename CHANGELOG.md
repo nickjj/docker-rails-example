@@ -9,6 +9,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+#### Back-end dependencies
+
+- Update `rails` to `7.0.5`
+- Update `sidekiq` to `7.1.1`
+
 #### Front-end dependencies
 
 - Update `postcss` to `8.4.24`
