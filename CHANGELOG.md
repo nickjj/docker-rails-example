@@ -11,6 +11,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Back-end dependencies
 
+- Update `puma` to `6.3.0`
 - Update `rails` to `7.0.5`
 - Update `sidekiq` to `7.1.1`
 
