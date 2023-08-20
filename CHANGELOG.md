@@ -11,6 +11,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Add `required: false` to `depends_on` in `docker-compose.yml` (requires Docker Compose v2.20.2+)
 
+#### Languages and services
+
+- Update `Node` to `20.X`
+
 #### Back-end dependencies
 
 - Update `cssbundling-rails` to `1.2.0`
