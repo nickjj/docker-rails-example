@@ -11,6 +11,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Add `required: false` to `depends_on` in `docker-compose.yml` (requires Docker Compose v2.20.2+)
 - Update Node and Yarn install strategy to remove install script deprecation warning
+- A whole bunch of changes related to Rails 7.1.0, take a look at [this commit](https://github.com/nickjj/docker-rails-example/commit/2e1d83110b6b0319017785a36e3ba53a5fd39696)
 
 #### Languages and services
 
