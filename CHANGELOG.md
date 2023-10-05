@@ -22,11 +22,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `cssbundling-rails` to `1.3.0`
 - Update `jsbundling-rails` to `1.2.0`
-- Update `puma` to `6.3.1`
+- Update `puma` to `6.4.0`
 - Update `rack-mini-profiler` to `3.1.1`
-- Update `rails` to `7.0.8`
+- Update `rails` to `7.1.0`
 - Update `redis` to `5.0.7`
-- Update `sidekiq` to `7.1.4`
+- Update `sidekiq` to `7.1.5`
 - Update `stimulus-rails` to `1.2.2`
 
 #### Front-end dependencies
