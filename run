@@ -83,6 +83,11 @@ function bundle:outdated {
   cmd bundle outdated
 }
 
+function yarn:add {
+  # Add a new yarn dependency
+  _dc js yarn add "${@}"
+}
+
 function bundle:update {
   # Update any installed gems that are outdated
   cmd bundle update

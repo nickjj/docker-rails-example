@@ -334,7 +334,8 @@ and / or `package.json` file.
 Then to update your dependencies you can run `./run bundle:install` or `./run
 yarn:install`. That'll make sure any lock files get copied from Docker's image
 (thanks to volumes) into your code repo and now you can commit those files to
-version control like usual.
+version control like usual. There is `./run yarn:add` to add a new NPM package
+to your app.
 
 Alternatively for updating your gems based on specific version ranges defined
 in your `Gemfile` you can run `./run bundle:update` which will install the
