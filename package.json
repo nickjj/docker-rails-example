@@ -5,10 +5,10 @@
     "@hotwired/stimulus": "3.2.2",
     "@hotwired/turbo-rails": "7.3.0",
     "autoprefixer": "10.4.16",
-    "esbuild": "0.19.5",
-    "postcss": "8.4.31",
+    "esbuild": "0.19.9",
+    "postcss": "8.4.32",
     "postcss-import": "15.1.0",
-    "tailwindcss": "3.3.5"
+    "tailwindcss": "3.3.6"
   },
   "scripts": {
     "build": "./run yarn:build",
