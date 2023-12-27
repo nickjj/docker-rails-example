@@ -75,6 +75,7 @@ Dockerize an existing Rails app.
     - Extract a bunch of configuration settings into environment variables
     - Rewrite `config/database.yml` to use environment variables
     - `.yarnc` sets a custom `node_modules/` directory
+    - `config/initializers/enable_yjit.rb` to enable YJIT
     - `config/initializers/rack_mini_profiler.rb` to enable profiling Hotwire Turbo Drive
     - `config/initializers/assets.rb` references a custom `node_modules/` directory
     - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety

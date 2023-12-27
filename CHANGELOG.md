@@ -9,6 +9,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Add `config/initializers/enable_yjit.rb` which enables YJIT by default (delete this file to disable it)
 - Add `required: false` to `depends_on` in `docker-compose.yml` (requires Docker Compose v2.20.2+)
 - Update Node and Yarn install strategy to remove install script deprecation warning
 - A whole bunch of changes related to Rails 7.1.0, take a look at [this commit](https://github.com/nickjj/docker-rails-example/commit/94e9190e2e3db2cd350cd217db3b270b7c77fb72)
