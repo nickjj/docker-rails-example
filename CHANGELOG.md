@@ -26,7 +26,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `cssbundling-rails` to `1.4.0`
 - Update `jsbundling-rails` to `1.3.0`
 - Update `minitest` to `5.22.2`
-- Update `pg` to `1.5.5`
+- Update `pg` to `1.5.6`
 - Update `puma` to `6.4.2`
 - Update `rack-mini-profiler` to `3.3.0`
 - Update `rack-mini-profiler` to `3.3.1`
@@ -35,7 +35,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `redis` to `5.1.0`
 - Update `sidekiq` to `7.2.2`
 - Update `stimulus-rails` to `1.3.3`
-- Update `turbo-rails` to `2.0.4`
+- Update `turbo-rails` to `2.0.5`
 
 #### Front-end dependencies
 
