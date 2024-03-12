@@ -3,8 +3,8 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "3.2.2",
-    "@hotwired/turbo-rails": "8.0.3",
-    "autoprefixer": "10.4.17",
+    "@hotwired/turbo-rails": "8.0.4",
+    "autoprefixer": "10.4.18",
     "esbuild": "0.20.1",
     "postcss": "8.4.35",
     "postcss-import": "16.0.1",
