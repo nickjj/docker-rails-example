@@ -28,3 +28,4 @@ yarn-debug.log*
 .env*
 !.env.example
 docker-compose.override.yml
+vendor/bundle

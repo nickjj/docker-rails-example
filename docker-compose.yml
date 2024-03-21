@@ -21,6 +21,7 @@ x-app: &default-app
   tty: true
   volumes:
     - "${DOCKER_WEB_VOLUME:-./public:/app/public}"
+    - "${DOCKER_BUNDLE_VOLUME:-./vendor/bundle:/app/vendor/bundle}"
 
 x-assets: &default-assets
   build:
@@ -39,6 +40,8 @@ x-assets: &default-assets
   tty: true
   volumes:
     - ".:/app"
+    - "${DOCKER_BUNDLE_VOLUME:-./vendor/bundle:/app/vendor/bundle}"
+
 
 services:
   postgres:
@@ -101,7 +104,7 @@ services:
 
   cable:
     <<: *default-app
-    command: "puma -p 28080 cable/config.ru"
+    command: "bundle exec puma -p 28080 cable/config.ru"
     entrypoint: []
     deploy:
       resources:
