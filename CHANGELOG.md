@@ -31,10 +31,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `puma` to `6.4.2`
 - Update `rack-mini-profiler` to `3.3.0`
 - Update `rack-mini-profiler` to `3.3.1`
-- Update `rack` to `3.0.10`
+- Update `rack` to `3.0.11`
 - Update `rails` to `7.1.3.2`
 - Update `redis` to `5.2.0`
-- Update `sidekiq` to `7.2.2`
+- Update `sidekiq` to `7.2.4`
 - Update `stimulus-rails` to `1.3.3`
 - Update `turbo-rails` to `2.0.5`
 
