@@ -23,6 +23,8 @@ USER ruby
 COPY --chown=ruby:ruby Gemfile* ./
 RUN bundle install
 
+# Only add the .yarnrc file in Docker to prevent impact on local environment
+COPY .yarnrc.docker .yarnrc 
 COPY --chown=ruby:ruby package.json *yarn* ./
 RUN yarn install
 
