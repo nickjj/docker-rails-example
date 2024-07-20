@@ -3,12 +3,12 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "3.2.2",
-    "@hotwired/turbo-rails": "8.0.4",
+    "@hotwired/turbo-rails": "8.0.5",
     "autoprefixer": "10.4.19",
-    "esbuild": "0.21.5",
-    "postcss": "8.4.38",
+    "esbuild": "0.23.0",
+    "postcss": "8.4.39",
     "postcss-import": "16.1.0",
-    "tailwindcss": "3.4.4"
+    "tailwindcss": "3.4.6"
   },
   "scripts": {
     "build": "./run yarn:build",
