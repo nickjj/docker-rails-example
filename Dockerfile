@@ -20,9 +20,6 @@ RUN bash -c "set -o pipefail && apt-get update \
 
 USER ruby
 
-COPY --chown=ruby:ruby Gemfile* ./
-RUN bundle install
-
 COPY --chown=ruby:ruby package.json *yarn* ./
 RUN yarn install
 
@@ -68,7 +65,6 @@ ENV RAILS_ENV="${RAILS_ENV}" \
     PATH="${PATH}:/home/ruby/.local/bin" \
     USER="ruby"
 
-COPY --chown=ruby:ruby --from=assets /usr/local/bundle /usr/local/bundle
 COPY --chown=ruby:ruby --from=assets /app/public /public
 COPY --chown=ruby:ruby . .
 
@@ -76,4 +72,4 @@ ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
 
 EXPOSE 8000
 
-CMD ["rails", "s"]
+CMD ["bundle", "exec", "rails", "s"]

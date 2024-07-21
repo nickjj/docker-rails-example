@@ -21,4 +21,13 @@ if compgen -G "${manifest_files}" > /dev/null 2>&1; then
     -delete
 fi
 
+if bundle check
+then
+  # Don't print a huge long list of gems if they are already installed
+  echo "Bundle installing silently..."
+  bundle install --jobs="$(nproc)" > "${BUNDLE_PATH}"/bundle_install
+  tail -n 2 "${BUNDLE_PATH}"/bundle_install
+else
+  bundle install --jobs="$(nproc)"
+fi
 exec "$@"
