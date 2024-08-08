@@ -24,10 +24,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Back-end dependencies
 
-- Update `cssbundling-rails` to `1.4.0`
-- Update `jsbundling-rails` to `1.3.0`
+- Update `cssbundling-rails` to `1.4.1`
+- Update `jsbundling-rails` to `1.3.1`
 - Update `minitest` to `5.24.1`
-- Update `pg` to `1.5.6`
+- Update `pg` to `1.5.7`
 - Update `puma` to `6.4.2`
 - Update `rack-mini-profiler` to `3.3.0`
 - Update `rack-mini-profiler` to `3.3.1`
