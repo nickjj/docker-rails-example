@@ -70,7 +70,7 @@ Dockerize an existing Rails app.
     - Add `pages` controller with a home page
     - Add `up` controller with 2 health check related actions
 - **Config**:
-    - Log to STDOUT so that Docker can consume and deal with log output 
+    - Log to STDOUT so that Docker can consume and deal with log output
     - Credentials are removed (secrets are loaded in with an `.env` file)
     - Extract a bunch of configuration settings into environment variables
     - Rewrite `config/database.yml` to use environment variables
@@ -120,7 +120,7 @@ these commands for PowerShell if you want.
 git clone https://github.com/nickjj/docker-rails-example hellorails
 cd hellorails
 
-# Optionally checkout a specific tag, such as: git checkout 0.8.0
+# Optionally checkout a specific tag, such as: git checkout 0.9.0
 ```
 
 #### Copy an example .env file because the real one is git ignored:
@@ -364,7 +364,7 @@ couple of free and paid resources. There's Google too!
 
 ### Learn more about Docker and Ruby on Rails
 
-#### Official documentation 
+#### Official documentation
 
 - <https://docs.docker.com/>
 - <https://guides.rubyonrails.org/>
