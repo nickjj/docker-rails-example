@@ -14,6 +14,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update Node and Yarn install strategy to remove install script deprecation warning
 - A whole bunch of changes related to Rails 7.1.0, take a look at [this commit](https://github.com/nickjj/docker-rails-example/commit/94e9190e2e3db2cd350cd217db3b270b7c77fb72)
 - Update `rename-project` script to auto-delete temporary files
+- Rename `docker-compose.yml` to `compose.yaml` to stick to the official Docker Compose spec
 
 #### Languages and services
 
