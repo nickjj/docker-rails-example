@@ -14,7 +14,7 @@ practices](https://nickjanetakis.com/blog/best-practices-around-production-ready
 based on building and deploying dozens of assorted Dockerized web apps since
 late 2014.
 
-**This app is using Rails 7.1.3.4 and Ruby 3.3.4**. The screenshot doesn't get
+**This app is using Rails 7.2.0 and Ruby 3.3.4**. The screenshot doesn't get
 updated every time I bump the versions:
 
 [![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)
@@ -69,6 +69,7 @@ Dockerize an existing Rails app.
 - **App Features**:
     - Add `pages` controller with a home page
     - Add `up` controller with 2 health check related actions
+    - Remove generated code around PWA and service workers
 - **Config**:
     - Log to STDOUT so that Docker can consume and deal with log output
     - Credentials are removed (secrets are loaded in with an `.env` file)
@@ -80,6 +81,7 @@ Dockerize an existing Rails app.
     - `config/initializers/assets.rb` references a custom `node_modules/` directory
     - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety
     - `Procfile.dev` has been removed since Docker Compose handles this for us
+    - Brakeman has been removed
 - **Assets**:
     - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
     - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
@@ -179,6 +181,17 @@ You can also run `./run test -b` with does the same thing but builds your JS
 and CSS bundles. This could come in handy in fresh environments such as CI
 where your assets haven't changed and you haven't visited the page in a
 browser.
+
+#### Static code analysis with Rubocop:
+
+```sh
+# You can run this from the same terminal as before.
+./run rubocop
+```
+
+You can also run `./run rubocop --auto-correct` which will automatically
+correct any issues that are auto-correctable. Alternatively the shorthand `-a`
+flag does the same thing.
 
 #### Stopping everything:
 

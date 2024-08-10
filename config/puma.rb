@@ -6,12 +6,25 @@
 bind "tcp://0.0.0.0:#{ENV.fetch("PORT") { "8000" }}"
 environment ENV.fetch("RAILS_ENV") { "production" }
 
-# Puma can serve each request in a thread from an internal thread pool.
-# The `threads` method setting takes two numbers: a minimum and maximum.
-# Any libraries that use thread pools should be configured to match
-# the maximum value specified for Puma. Default is set to 5 threads for minimum
-# and maximum; this matches the default thread size of Active Record.
-threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+# Puma starts a configurable number of processes (workers) and each process
+# serves each request in a thread from an internal thread pool.
+#
+# The ideal number of threads per worker depends both on how much time the
+# application spends waiting for IO operations and on how much you wish to
+# to prioritize throughput over latency.
+#
+# As a rule of thumb, increasing the number of threads will increase how much
+# traffic a given process can handle (throughput), but due to CRuby's
+# Global VM Lock (GVL) it has diminishing returns and will degrade the
+# response time (latency) of the application.
+#
+# The default is set to 3 threads as it's deemed a decent compromise between
+# throughput and latency for the average Rails application.
+#
+# Any libraries that use a connection pool or another resource pool should
+# be configured to provide at least as many connections as the number of
+# threads. This includes Active Record's `pool` parameter in `database.yml`.
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 3 }
 threads threads_count, threads_count
 
 # Specifies the number of `workers` to boot in clustered mode.
@@ -33,3 +46,6 @@ preload_app!
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
+
+# Only use a pidfile when requested.
+pidfile ENV["PIDFILE"] if ENV["PIDFILE"]

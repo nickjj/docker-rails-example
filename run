@@ -73,6 +73,11 @@ function hadolint {
     hadolint/hadolint hadolint --ignore DL3008 -t style "${@}" - < Dockerfile
 }
 
+function rubocop {
+  # Evaluate and auto-format your Ruby code by passing in --auto-correct.
+  cmd rubocop "${@}"
+}
+
 function bundle:install {
   # Install Ruby dependencies and write out a lock file
   _build_run_down web bundle install

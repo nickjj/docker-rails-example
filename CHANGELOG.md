@@ -7,7 +7,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-- Nothing yet!
+### Changed
+
+#### Back-end dependencies
+
+- Update `rails` to `7.2.0`
 
 ## [0.9.0] - 2024-08-09
 

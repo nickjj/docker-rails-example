@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 require "fileutils"
 
-# path to your application root.
 APP_ROOT = File.expand_path("..", __dir__)
+APP_NAME = "hellorails"
 
 def system!(*args)
   system(*args, exception: true)
