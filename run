@@ -165,6 +165,8 @@ function ci:test {
     -e PGPASSWORD=${POSTGRES_PASSWORD} postgres \
     psql -U ${POSTGRES_USER} ${POSTGRES_USER} -c 'SELECT 1'"
 
+  rubocop -f github
+
   docker compose logs
 
   rails db:setup
