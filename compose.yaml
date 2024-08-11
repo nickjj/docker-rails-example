@@ -109,7 +109,7 @@ services:
           cpus: "${DOCKER_CABLE_CPUS:-0}"
           memory: "${DOCKER_CABLE_MEMORY:-0}"
     ports:
-      - "${DOCKER_CABLE_PORT_FORWARD:-127.0.0.1:28080}:28080"
+      - "${DOCKER_CABLE_PORT_FORWARD:-127.0.0.1:28080}:${CABLE_PORT:-28080}"
     profiles: ["cable"]
 
   js:

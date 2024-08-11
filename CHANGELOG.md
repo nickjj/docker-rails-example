@@ -9,6 +9,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
+- Reference `CABLE_PORT` in `compose.yaml`
+
 #### Back-end dependencies
 
 - Update `rails` to `7.2.0` (check [this commit](https://github.com/nickjj/docker-rails-example/commit/a23dddb802b8d98100ca43c4cad34969f61919f6) for more details)
