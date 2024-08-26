@@ -25,6 +25,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `sidekiq` to `7.3.1`
 - Update `stimulus-rails` to `1.3.4`
 
+#### Front-end dependencies
+
+- Update `esbuild` to `0.23.1`
+- Update `tailwindcss` to `3.4.10`
+
 ## [0.9.0] - 2024-08-09
 
 ### Changed
