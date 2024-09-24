@@ -20,11 +20,14 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Back-end dependencies
 
 - Update `minitest` to `5.25.1`
+- Update `pg` to `1.5.8`
+- Update `puma` to `6.4.3`
 - Update `rails` to `7.2.1` (check [this commit](https://github.com/nickjj/docker-rails-example/commit/a23dddb802b8d98100ca43c4cad34969f61919f6) for 7.1 to 7.2)
 - Update `redis` to `5.3.0`
-- Update `rubocop-rails` to `2.26.0`
-- Update `sidekiq` to `7.3.1`
+- Update `rubocop-rails` to `2.26.2`
+- Update `sidekiq` to `7.3.2`
 - Update `stimulus-rails` to `1.3.4`
+- Update `turb-rails` to `2.0.10`
 
 #### Front-end dependencies
 
