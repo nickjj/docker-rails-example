@@ -14,7 +14,7 @@ practices](https://nickjanetakis.com/blog/best-practices-around-production-ready
 based on building and deploying dozens of assorted Dockerized web apps since
 late 2014.
 
-**This app is using Rails 7.2.1 and Ruby 3.3.5**. The screenshot doesn't get
+**This app is using Rails 8.0.0 and Ruby 3.3.5**. The screenshot doesn't get
 updated every time I bump the versions:
 
 [![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)
@@ -66,6 +66,8 @@ Dockerize an existing Rails app.
     - Use Redis as the cache back-end
     - Use Sidekiq as a background worker through Active Job
     - Use a standalone Action Cable process
+    - Remove `solid_*` adapters (for now)
+    - Remove Kamal and Thruster (for now)
 - **App Features**:
     - Add `pages` controller with a home page
     - Add `up` controller with 2 health check related actions
@@ -83,6 +85,7 @@ Dockerize an existing Rails app.
     - `Procfile.dev` has been removed since Docker Compose handles this for us
     - Brakeman has been removed
 - **Assets**:
+    - Continue using Sprockets (for now)
     - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
     - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
     - Add ActiveStorage JavaScript package

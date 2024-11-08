@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Hello
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.2
+    config.load_defaults 8.0
 
     # Please, see:
     #   https://guides.rubyonrails.org/autoloading_and_reloading_constants.html#config-autoload-lib-ignore.
@@ -17,9 +17,10 @@ module Hello
 
     # Log to STDOUT because Docker expects all processes to log here. You could
     # then collect logs using journald, syslog or forward them somewhere else.
-    config.logger = ActiveSupport::Logger.new(STDOUT)
-      .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-      .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+    config.logger = ActiveSupport::TaggedLogging.logger(STDOUT)
+
+    # Various functionality in Rails requires setting a host URL.
+    routes.default_url_options[:host] = ENV.fetch("URL_HOST") { "localhost:8000" }
 
     # Set Redis as the back-end for the cache.
     config.cache_store = :redis_cache_store, {

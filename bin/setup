@@ -2,7 +2,6 @@
 require "fileutils"
 
 APP_ROOT = File.expand_path("..", __dir__)
-APP_NAME = "hellorails"
 
 def system!(*args)
   system(*args, exception: true)
@@ -14,7 +13,6 @@ FileUtils.chdir APP_ROOT do
   # Add necessary setup steps to this file.
 
   puts "== Installing dependencies =="
-  system! "gem install bundler --conservative"
   system("bundle check") || system!("bundle install")
 
   # puts "\n== Copying sample files =="
