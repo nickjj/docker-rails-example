@@ -1,0 +1,19 @@
+<h1>People</h1>
+
+<h1><%= button_to 'Create Person', people_path, method: :post %></h1>
+
+<div id="people">
+  <% @people.each do |person| %>
+    <div id="<%= dom_id person %>">
+      <p>
+        <strong>Name:</strong>
+        <%= person.name %>
+      </p>
+
+      <p>
+        <strong>Active:</strong>
+        <%= person.active %>
+      </p>
+    </div>
+  <% end %>
+</div>
