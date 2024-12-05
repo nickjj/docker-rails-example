@@ -19,8 +19,11 @@ Rails.application.configure do
   config.public_file_server.headers = { "cache-control" => "public, max-age=3600" }
 
   # Show full error reports.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.cache_store = :null_store
+
+  # Set the test adapter for jobs.
+  config.active_job.queue_adapter = :test
 
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = :rescuable
