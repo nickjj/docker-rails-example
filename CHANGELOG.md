@@ -24,13 +24,13 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Back-end dependencies
 
-- Update `minitest` to `5.25.1`
+- Update `minitest` to `5.25.4`
 - Update `pg` to `1.5.9`
-- Update `puma` to `6.4.3`
-- Update `rails` to `8.0.0` (check [this commit](https://github.com/nickjj/docker-rails-example/commit/acf9ae266f16502f871bc167deeb21074152c5a4) for 7.2 to 8.0)
+- Update `puma` to `6.5.0`
+- Update `rails` to `8.0.0.1` (check [this commit](https://github.com/nickjj/docker-rails-example/commit/acf9ae266f16502f871bc167deeb21074152c5a4) for 7.2 to 8.0)
 - Update `redis` to `5.3.0`
 - Update `rubocop-rails` to `2.27.0`
-- Update `sidekiq` to `7.3.5`
+- Update `sidekiq` to `7.3.6`
 - Update `stimulus-rails` to `1.3.4`
 - Update `turb-rails` to `2.0.11`
 
