@@ -38,8 +38,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `@hotwired/turbo-rails` to `8.0.20`
 - Update `esbuild` to `0.24.0`
-- Update `postcss` to `8.4.47`
-- Update `tailwindcss` to `3.4.14`
+- Update `postcss` to `8.4.49`
+- Update `tailwindcss` to `3.4.16`
 
 ## [0.9.0] - 2024-08-09
 
