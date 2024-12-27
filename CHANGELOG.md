@@ -15,6 +15,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Reference `CABLE_PORT` in `compose.yaml`
 - Set `config.active_job.queue_adapter = :test` in `config/environments/test.rb`
+- Replace Sprockets with Propshaft
 
 #### Languages and services
 

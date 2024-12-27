@@ -85,7 +85,6 @@ Dockerize an existing Rails app.
     - `Procfile.dev` has been removed since Docker Compose handles this for us
     - Brakeman has been removed
 - **Assets**:
-    - Continue using Sprockets (for now)
     - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
     - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
     - Add ActiveStorage JavaScript package

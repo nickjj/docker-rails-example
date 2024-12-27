@@ -158,7 +158,12 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
-    psych (5.2.1)
+    propshaft (1.1.0)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
+    psych (5.2.2)
       date
       stringio
     public_suffix (6.0.1)
@@ -257,13 +262,6 @@ GEM
       logger
       rack (>= 2.2.4)
       redis-client (>= 0.22.2)
-    sprockets (4.2.1)
-      concurrent-ruby (~> 1.0)
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.2)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      sprockets (>= 3.0.0)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.2)
@@ -309,6 +307,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
+  propshaft (~> 1.1)
   puma (~> 6.4)
   rack-mini-profiler
   rails (~> 8.0)
@@ -316,7 +315,6 @@ DEPENDENCIES
   rubocop-rails-omakase
   selenium-webdriver
   sidekiq (~> 7.3)
-  sprockets-rails
   stimulus-rails
   turbo-rails
   tzinfo-data
