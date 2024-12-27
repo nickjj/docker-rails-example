@@ -11,6 +11,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - `URL_HOST` environment variable for setting `default_url_options[:host]`
 
+#### Back-end dependencies
+
+- Add `hotwire-spark` for live reloading in development
+
 ### Changed
 
 - Reference `CABLE_PORT` in `compose.yaml`

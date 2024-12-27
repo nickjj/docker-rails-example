@@ -88,6 +88,7 @@ Dockerize an existing Rails app.
     - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
     - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
     - Add ActiveStorage JavaScript package
+    - Add [Hotwire Spark](https://github.com/hotwired/spark) for live reloading in development
 - **Public:**
     - Custom `502.html` and `maintenance.html` pages
     - Generate favicons using modern best practices

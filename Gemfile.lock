@@ -100,8 +100,13 @@ GEM
       reline (>= 0.3.8)
     drb (2.2.1)
     erubi (1.13.1)
+    ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hotwire-spark (0.1.12)
+      listen
+      rails (>= 7.0.0)
+      zeitwerk
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -115,6 +120,9 @@ GEM
       railties (>= 6.0.0)
     json (2.9.1)
     language_server-protocol (3.17.0.3)
+    listen (3.9.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.6.4)
     loofah (2.23.1)
       crass (~> 1.0.2)
@@ -210,6 +218,9 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.11.1)
+      ffi (~> 1.0)
     rdoc (6.10.0)
       psych (>= 4.0.0)
     redis (5.3.0)
@@ -304,6 +315,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  hotwire-spark (~> 0.1)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

@@ -59,6 +59,9 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem "rack-mini-profiler"
+
+  # Live reloading for Hotwire applications [https://github.com/hotwired/spark]
+  gem "hotwire-spark", "~> 0.1"
 end
 
 group :test do
