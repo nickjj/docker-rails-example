@@ -80,7 +80,6 @@ Dockerize an existing Rails app.
     - `.yarnc` sets a custom `node_modules/` directory
     - `config/initializers/enable_yjit.rb` to enable YJIT
     - `config/initializers/rack_mini_profiler.rb` to enable profiling Hotwire Turbo Drive
-    - `config/initializers/assets.rb` references a custom `node_modules/` directory
     - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety
     - `Procfile.dev` has been removed since Docker Compose handles this for us
     - Brakeman has been removed
