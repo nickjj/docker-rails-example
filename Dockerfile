@@ -19,14 +19,17 @@ RUN bash -c "set -o pipefail && apt-get update \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules /app"
 
 USER ruby
+ARG BUNDLE_WITHOUT='development test'
+ENV BUNDLE_PATH=/usr/local/bundle
 
 COPY --chown=ruby:ruby Gemfile* ./
-RUN bundle install --deployment --without development test -j4 --retry 3 --no-cache --no-clean \
-  && rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git /usr/local/bundle/cache/*.gem
+RUN bundle config set without $BUNDLE_WITHOUT && \
+    bundle config set deployment true && \
+    bundle install
 
 RUN mkdir .yarn public log tmp
 COPY --chown=ruby:ruby package.json *yarn* ./
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 ARG RAILS_ENV="production"
 ARG NODE_ENV="production"
@@ -68,7 +71,8 @@ RUN chmod 0755 bin/*
 ARG RAILS_ENV="production"
 ENV RAILS_ENV="${RAILS_ENV}" \
     PATH="${PATH}:/home/ruby/.local/bin" \
-    USER="ruby"
+    USER="ruby" \
+    BUNDLE_PATH=/usr/local/bundle
 
 COPY --chown=ruby:ruby --from=assets /usr/local/bundle /usr/local/bundle
 COPY --chown=ruby:ruby --from=assets /app/public /public
