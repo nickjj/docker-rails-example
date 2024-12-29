@@ -40,8 +40,6 @@ COPY --chown=ruby:ruby . .
 RUN if [ "${RAILS_ENV}" != "development" ]; then \
   SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile; fi
 
-# RUN bundle exec bootsnap precompile app/ lib/ && bundle exec bootsnap precompile --gemfile
-
 CMD ["bash"]
 
 ###############################################################################
@@ -55,7 +53,7 @@ ARG UID=1000
 ARG GID=1000
 
 RUN apt-get update \
-&& apt-get install -y --no-install-recommends curl libpq-dev tzdata \
+&& apt-get install -y --no-install-recommends curl postgresql-client tzdata \
 && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
   && groupadd -g "${GID}" ruby \
