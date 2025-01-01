@@ -20,12 +20,6 @@ function _dc {
   docker compose "${DC}" ${TTY} "${@}"
 }
 
-function _build_run_down {
-  docker compose build
-  docker compose run ${TTY} "${@}"
-  docker compose down
-}
-
 # -----------------------------------------------------------------------------
 
 function cmd {
@@ -78,30 +72,37 @@ function rubocop {
   cmd rubocop "${@}"
 }
 
-function bundle:install {
-  # Install Ruby dependencies and write out a lock file
-  _build_run_down web bundle install
+function deps:install {
+  local no_build="${1:-}"
+
+  [ -z "${no_build}" ] && docker compose down && docker compose build
+
+  DC="run" _dc --no-deps --rm js yarn install
+  DC="run" _dc --no-deps --rm web bundle install
+}
+
+function bundle {
+  cmd bundle "${@}"
 }
 
 function bundle:outdated {
   # List any installed gems that are outdated
-  cmd bundle outdated
+  bundle outdated
 }
 
 function bundle:update {
   # Update any installed gems that are outdated
-  cmd bundle update
-  bundle:install
+  bundle update
+  deps:install
 }
 
-function yarn:install {
-  # Install Yarn dependencies and write out a lock file
-  _build_run_down js yarn install
+function yarn {
+  _dc js yarn "${@}"
 }
 
 function yarn:outdated {
   # Install yarn dependencies and write lock file
-  _dc js yarn outdated
+  yarn outdated
 }
 
 function yarn:build {

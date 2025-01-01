@@ -10,6 +10,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - `URL_HOST` environment variable for setting `default_url_options[:host]`
+- `./run bundle [...]` to run any Bundler command
+- `./run yarn [...]` to run any Yarn command
 
 #### Back-end dependencies
 
@@ -20,6 +22,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Reference `CABLE_PORT` in `compose.yaml`
 - Set `config.active_job.queue_adapter = :test` in `config/environments/test.rb`
 - Replace Sprockets with Propshaft
+- Replace `./run bundle:install` with `./run deps:install [--no-build]` to install any deps
+- Replace `./run yarn:install` with `./run deps:install [--no-build]` to install any deps
 
 #### Languages and services
 
