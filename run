@@ -93,7 +93,7 @@ function bundle:outdated {
 function bundle:update {
   # Update any installed gems that are outdated
   bundle update
-  deps:install
+  deps:install "${@}"
 }
 
 function yarn {
