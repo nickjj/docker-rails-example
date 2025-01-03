@@ -20,6 +20,10 @@ function _dc {
   docker compose "${DC}" ${TTY} "${@}"
 }
 
+function _dc_run {
+   DC="run" _dc --no-deps --rm "${@}"
+}
+
 # -----------------------------------------------------------------------------
 
 function cmd {
@@ -77,8 +81,8 @@ function deps:install {
 
   [ -z "${no_build}" ] && docker compose down && docker compose build
 
-  DC="run" _dc --no-deps --rm js yarn install
-  DC="run" _dc --no-deps --rm web bundle install
+  _dc_run js yarn install
+  _dc_run web bundle install
 }
 
 function bundle {
@@ -87,12 +91,12 @@ function bundle {
 
 function bundle:outdated {
   # List any installed gems that are outdated
-  bundle outdated
+  _dc_run web bundle outdated
 }
 
 function bundle:update {
   # Update any installed gems that are outdated
-  bundle update
+  _dc_run web bundle update
   deps:install "${@}"
 }
 
@@ -102,7 +106,7 @@ function yarn {
 
 function yarn:outdated {
   # Install yarn dependencies and write lock file
-  yarn outdated
+  _dc_run js yarn outdated
 }
 
 function yarn:build {
