@@ -29,7 +29,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `Ruby` to `3.4.1`
 - Update `Postgres` to `17.2`
-- Update `Redis` to `7.4.1`
+- Update `Redis` to `7.4.2`
 
 #### Back-end dependencies
 
