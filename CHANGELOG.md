@@ -12,6 +12,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - `URL_HOST` environment variable for setting `default_url_options[:host]`
 - `./run bundle [...]` to run any Bundler command
 - `./run yarn [...]` to run any Yarn command
+- `libyaml-dev` as a system library so the psych gem can be installed
 
 #### Back-end dependencies
 
