@@ -44,14 +44,15 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `rubocop-rails` to `2.28.0`
 - Update `sidekiq` to `7.3.7`
 - Update `stimulus-rails` to `1.3.4`
-- Update `turb-rails` to `2.0.11`
+- Update `turbo-rails` to `2.0.11`
 
 #### Front-end dependencies
 
 - Update `@hotwired/turbo-rails` to `8.0.20`
 - Update `esbuild` to `0.24.2`
-- Update `postcss` to `8.5.1`
-- Update `tailwindcss` to `3.4.17`
+- Update `tailwindcss` to `4.0.0`
+- Update `@tailwindcss/cli` to `4.0.0`
+- Update `@tailwindcss/postcss` to `4.0.0`
 
 ## [0.9.0] - 2024-08-09
 
