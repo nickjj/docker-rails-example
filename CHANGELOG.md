@@ -39,7 +39,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `hotwire-spark` to `0.1.13`
 - Update `minitest` to `5.25.4`
 - Update `pg` to `1.5.9`
-- Update `puma` to `6.5.0`
+- Update `puma` to `6.6.0`
 - Update `rails` to `8.0.1` (check [this commit](https://github.com/nickjj/docker-rails-example/commit/acf9ae266f16502f871bc167deeb21074152c5a4) for 7.2 to 8.0)
 - Update `redis` to `5.3.0`
 - Update `rubocop-rails` to `2.29.1`
