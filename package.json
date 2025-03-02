@@ -5,9 +5,9 @@
     "@hotwired/stimulus": "3.2.2",
     "@hotwired/turbo-rails": "8.0.12",
     "esbuild": "0.25.0",
-    "tailwindcss": "4.0.5",
-    "@tailwindcss/cli": "4.0.5",
-    "@tailwindcss/postcss": "4.0.5"
+    "tailwindcss": "4.0.9",
+    "@tailwindcss/cli": "4.0.9",
+    "@tailwindcss/postcss": "4.0.9"
   },
   "scripts": {
     "build": "./run yarn:build",
