@@ -29,9 +29,9 @@ RUN yarn install
 ARG RAILS_ENV="production"
 ARG NODE_ENV="production"
 ENV RAILS_ENV="${RAILS_ENV}" \
-    NODE_ENV="${NODE_ENV}" \
-    PATH="${PATH}:/home/ruby/.local/bin:/node_modules/.bin" \
-    USER="ruby"
+  NODE_ENV="${NODE_ENV}" \
+  PATH="${PATH}:/home/ruby/.local/bin:/node_modules/.bin" \
+  USER="ruby"
 
 COPY --chown=ruby:ruby . .
 
@@ -65,8 +65,8 @@ RUN chmod 0755 bin/*
 
 ARG RAILS_ENV="production"
 ENV RAILS_ENV="${RAILS_ENV}" \
-    PATH="${PATH}:/home/ruby/.local/bin" \
-    USER="ruby"
+  PATH="${PATH}:/home/ruby/.local/bin" \
+  USER="ruby"
 
 COPY --chown=ruby:ruby --from=assets /usr/local/bundle /usr/local/bundle
 COPY --chown=ruby:ruby --from=assets /app/public /public
