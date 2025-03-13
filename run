@@ -158,7 +158,7 @@ function ci:test {
   #   - https://github.com/koalaman/shellcheck
   #   - https://github.com/nickjj/wait-until
   shellcheck run bin/docker-entrypoint-web
-  hadolint "${@}"
+  lint:dockerfile "${@}"
 
   cp --no-clobber .env.example .env
 
