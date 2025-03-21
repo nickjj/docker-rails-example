@@ -16,27 +16,28 @@ fi
 # Helper functions start with _ and aren't listed in this script's help menu.
 # -----------------------------------------------------------------------------
 
-function _dc {
+_dc() {
+  # shellcheck disable=SC2086
   docker compose "${DC}" ${TTY} "${@}"
 }
 
-function _dc_run {
+_dc_run() {
   DC="run" _dc --no-deps --rm "${@}"
 }
 
 # -----------------------------------------------------------------------------
 
-function cmd {
+cmd() {
   # Run any command you want in the web container
   _dc web "${@}"
 }
 
-function rails {
+rails() {
   # Run any Rails commands
   cmd rails "${@}"
 }
 
-function test {
+test() {
   # Run your Rails tests, use `test -b` to first rebuild your JS and CSS
   local run_build="${1:-}"
   local test_command="rails test"
@@ -48,36 +49,36 @@ function test {
   _dc -e "RAILS_ENV=test" js bash -c "${test_command}"
 }
 
-function shell {
+shell() {
   # Start a shell session in the web container
   cmd bash "${@}"
 }
 
-function psql {
+psql() {
   # Connect to PostgreSQL with psql
   # shellcheck disable=SC1091
   . .env
   _dc postgres psql -U "${POSTGRES_USER}" "${@}"
 }
 
-function redis-cli {
+redis-cli() {
   # Connect to Redis with redis-cli
   _dc redis redis-cli "${@}"
 }
 
-function lint:dockerfile {
+lint:dockerfile() {
   # Lint Dockerfile
   docker container run --rm -i \
     -v "${PWD}/.hadolint.yaml:/.config/hadolint.yaml" \
     hadolint/hadolint hadolint "${@}" - <Dockerfile
 }
 
-function rubocop {
+rubocop() {
   # Evaluate and auto-format your Ruby code by passing in --auto-correct.
   cmd rubocop "${@}"
 }
 
-function deps:install {
+deps:install() {
   local no_build="${1:-}"
 
   [ -z "${no_build}" ] && docker compose down && docker compose build
@@ -86,31 +87,31 @@ function deps:install {
   _dc_run web bundle install
 }
 
-function bundle {
+bundle() {
   cmd bundle "${@}"
 }
 
-function bundle:outdated {
+bundle:outdated() {
   # List any installed gems that are outdated
   _dc_run web bundle outdated
 }
 
-function bundle:update {
+bundle:update() {
   # Update any installed gems that are outdated
   _dc_run web bundle update
   deps:install "${@}"
 }
 
-function yarn {
+yarn() {
   _dc js yarn "${@}"
 }
 
-function yarn:outdated {
+yarn:outdated() {
   # Install yarn dependencies and write lock file
   _dc_run js yarn outdated
 }
 
-function yarn:build {
+yarn:build() {
   # Build JS assets, this is only meant to be referenced from your package.json
   local args=()
 
@@ -123,7 +124,7 @@ function yarn:build {
   esbuild app/javascript/*.* --outdir=app/assets/builds --bundle "${args[@]}"
 }
 
-function yarn:build:css {
+yarn:build:css() {
   # Build CSS assets, this is only meant to be referenced from your package.json
   local args=()
 
@@ -138,12 +139,12 @@ function yarn:build:css {
     -o ./app/assets/builds/application.css "${args[@]}"
 }
 
-function clean {
+clean() {
   # Remove cache and other machine generates files
   rm -rf node_modules/ app/assets/builds/* public/assets tmp/* .byebug_history
 }
 
-function ci:install-deps {
+ci:install-deps() {
   # Install Continuous Integration (CI) dependencies
   sudo apt-get install -y curl shellcheck
   sudo curl \
@@ -151,7 +152,7 @@ function ci:install-deps {
     -o /usr/local/bin/wait-until && sudo chmod +x /usr/local/bin/wait-until
 }
 
-function ci:test {
+ci:test() {
   # Execute Continuous Integration (CI) pipeline
   #
   # It's expected that your CI environment has these tools available:
@@ -179,7 +180,7 @@ function ci:test {
   test -b
 }
 
-function help {
+help() {
   printf "%s <task> [args]\n\nTasks:\n" "${0}"
 
   compgen -A function | grep -v "^_" | cat -n
