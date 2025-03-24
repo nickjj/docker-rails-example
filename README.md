@@ -172,6 +172,12 @@ variables to fix this.
 
 Visit <http://localhost:8000> in your favorite browser.
 
+### Connect to the Database with tools like TablePlus/DBeaver:
+
+By default we expose the internal port 5432 (default PostgreSQL port) to the
+external world through the port 5499.
+Connect to 127.0.0.1:5499, with the user `hello` and the password `password`.
+
 #### Running the test suite:
 
 ```sh
