@@ -15,6 +15,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - `libyaml-dev` as a system library so the psych gem can be installed
 - `./run lint:shell` for linting shell scripts with ShellCheck
 - `./run format:shell` for formatting shell scripts with shfmt
+- `./run quality` to run all linting and formatting commands
 
 #### Back-end dependencies
 

@@ -183,6 +183,8 @@ You can also run `./run format --auto-correct` which will automatically correct
 any issues that are auto-correctable. Alternatively the shorthand `-a` flag
 does the same thing.
 
+*There's also a `./run quality` command to lint and format all files.*
+
 #### Running the test suite:
 
 ```sh
@@ -302,6 +304,7 @@ adding custom changes.
 
 ```sh
 # You can run this from the same terminal as before.
+./run quality
 ./run test
 ```
 
