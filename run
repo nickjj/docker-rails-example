@@ -73,6 +73,26 @@ lint:dockerfile() {
     hadolint/hadolint hadolint "${@}" - <Dockerfile
 }
 
+lint:shell() {
+  # Lint shell scripts
+  local cmd=(shellcheck)
+
+  if ! command -v shellcheck >/dev/null 2>&1; then
+    local cmd=(docker container run --rm -i -v "${PWD}:/mnt" koalaman/shellcheck:stable)
+  fi
+
+  find . -type f \
+    ! -path "./.git/*" \
+    ! -path "./.ruff_cache/*" \
+    ! -path "./app/*" \
+    ! -path "./assets/*" \
+    ! -path "./public/*" \
+    ! -path "./storage/*" \
+    ! -path "./tmp/*" \
+    ! -path "./vendor/*" \
+    -exec grep --quiet '^#!.*sh' {} \; -exec "${cmd[@]}" {} +
+}
+
 rubocop() {
   # Evaluate and auto-format your Ruby code by passing in --auto-correct.
   cmd rubocop "${@}"
@@ -146,7 +166,7 @@ clean() {
 
 ci:install-deps() {
   # Install Continuous Integration (CI) dependencies
-  sudo apt-get install -y curl shellcheck
+  sudo apt-get install -y curl
   sudo curl \
     -L https://raw.githubusercontent.com/nickjj/wait-until/v0.1.2/wait-until \
     -o /usr/local/bin/wait-until && sudo chmod +x /usr/local/bin/wait-until
@@ -154,12 +174,8 @@ ci:install-deps() {
 
 ci:test() {
   # Execute Continuous Integration (CI) pipeline
-  #
-  # It's expected that your CI environment has these tools available:
-  #   - https://github.com/koalaman/shellcheck
-  #   - https://github.com/nickjj/wait-until
-  shellcheck run bin/docker-entrypoint-web
   lint:dockerfile "${@}"
+  lint:shell
 
   cp --no-clobber .env.example .env
 
