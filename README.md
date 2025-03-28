@@ -330,47 +330,47 @@ much appreciated!
 
 ## Updating dependencies
 
-Let's say you've customized your app and it's time to make a change to your
-`Gemfile` or `package.json` file.
-
-Without Docker you'd normally run `bundle install` or `yarn install`. With
-Docker it's basically the same thing and since these commands are in our
-`Dockerfile` we can get away with doing a `docker compose build` but don't run
-that just yet.
-
-You can also access `bundle` and `yarn` in Docker with `./run bundle` and
-`./run yarn` after you've upped the project.
-
-#### In development:
-
 You can run `./run bundle:outdated` or `./run yarn:outdated` to get a list of
 outdated dependencies based on what you currently have installed. Once you've
 figured out what you want to update, go make those updates in your `Gemfile`
 and / or `package.json` file.
 
-Then to update your dependencies you can run `./run deps:install`. This will
-build a new image with any new dependencies and also make sure any lock file
-updates get copied from your image into your code repo and now you can commit
-those files to version control like usual.
+Or, let's say you've customized your app and it's time to add a new dependency,
+either for Ruby or Node.
 
-Alternatively for updating your gems based on specific version ranges defined
-in your `Gemfile` you can run `./run bundle:update` which will install the
-latest versions of your gems and then copy a new lock file.
+#### In development:
 
-You can check out the `run` file to see what these commands do in more detail.
+##### Option 1
+
+1. Directly edit `Gemfile` or `package.json` to add your package
+2. `./run deps:install` or `./run deps:install --no-build`
+    - The `--no-build` option will only write out a new lock file without re-building your image
+
+##### Option 2
+
+1. Run `./run bundle add mypackage --skip-install` or `run yarn add mypackage --no-lockfile` which will update your `Gemfile` or `package.json` with the latest version of that package but not install it
+2. The same step as step 2 from option 1
+
+Either option is fine, it's up to you based on what's more convenient at the
+time. You can modify the above workflows for updating an existing package or
+removing one as well.
+
+You can also access `bundle` and `yarn` in Docker with `./run bundle` and
+`./run yarn` after you've upped the project.
 
 #### In CI:
 
 You'll want to run `docker compose build` since it will use any existing lock
 files if they exist. You can also check out the complete CI test pipeline in
-the `run` file under the `ci:test` function.
+the [run](https://github.com/nickjj/docker-rails-example/blob/main/run) file
+under the `ci:test` function.
 
 #### In production:
 
 This is usually a non-issue since you'll be pulling down pre-built images from
 a Docker registry but if you decide to build your Docker images directly on
 your server you could run `docker compose build` as part of your deploy
-pipeline.
+pipeline which is similar to how it would work in CI.
 
 ## See a way to improve something?
 
