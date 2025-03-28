@@ -112,8 +112,8 @@ format:shell() {
   "${cmd[@]}" "${maybe_write[@]}" "${@}" .
 }
 
-rubocop() {
-  # Evaluate and auto-format your Ruby code by passing in --auto-correct.
+format() {
+  # Format Ruby code, optionally pass in --auto-correct to fix issues
   cmd rubocop "${@}"
 }
 
@@ -208,7 +208,7 @@ ci:test() {
     -e PGPASSWORD=${POSTGRES_PASSWORD} postgres \
     psql -U ${POSTGRES_USER} ${POSTGRES_USER} -c 'SELECT 1'"
 
-  rubocop -f github
+  format -f github
 
   docker compose logs
 

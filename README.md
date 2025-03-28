@@ -172,6 +172,17 @@ variables to fix this.
 
 Visit <http://localhost:8000> in your favorite browser.
 
+#### Formatting the code base:
+
+```sh
+# You should see that everything is unchanged (it's all already formatted).
+./run format
+```
+
+You can also run `./run format --auto-correct` which will automatically correct
+any issues that are auto-correctable. Alternatively the shorthand `-a` flag
+does the same thing.
+
 #### Running the test suite:
 
 ```sh
@@ -183,17 +194,6 @@ You can also run `./run test -b` with does the same thing but builds your JS
 and CSS bundles. This could come in handy in fresh environments such as CI
 where your assets haven't changed and you haven't visited the page in a
 browser.
-
-#### Static code analysis with Rubocop:
-
-```sh
-# You can run this from the same terminal as before.
-./run rubocop
-```
-
-You can also run `./run rubocop --auto-correct` which will automatically
-correct any issues that are auto-correctable. Alternatively the shorthand `-a`
-flag does the same thing.
 
 #### Stopping everything:
 
