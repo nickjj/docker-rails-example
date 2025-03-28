@@ -93,6 +93,25 @@ lint:shell() {
     -exec grep --quiet '^#!.*sh' {} \; -exec "${cmd[@]}" {} +
 }
 
+format:shell() {
+  # Format shell scripts
+  local cmd=(shfmt)
+
+  if ! command -v shfmt >/dev/null 2>&1; then
+    local cmd=(docker container run --rm -i -v "${PWD}:/mnt" -u "$(id -u):$(id -g)" -w /mnt mvdan/shfmt:v3)
+  fi
+
+  local maybe_write=("--write")
+
+  for arg in "${@}"; do
+    if [ "${arg}" == "-d" ] || [ "${arg}" == "--diff" ]; then
+      unset "maybe_write[0]"
+    fi
+  done
+
+  "${cmd[@]}" "${maybe_write[@]}" "${@}" .
+}
+
 rubocop() {
   # Evaluate and auto-format your Ruby code by passing in --auto-correct.
   cmd rubocop "${@}"
@@ -176,6 +195,7 @@ ci:test() {
   # Execute Continuous Integration (CI) pipeline
   lint:dockerfile "${@}"
   lint:shell
+  format:shell --diff
 
   cp --no-clobber .env.example .env
 
