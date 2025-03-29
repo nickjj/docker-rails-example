@@ -146,7 +146,7 @@ bundle:outdated() {
 
 bundle:update() {
   # Update any installed gems that are outdated
-  _dc_run web bundle update
+  _dc_run js bundle update
   deps:install "${@}"
 }
 
