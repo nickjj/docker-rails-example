@@ -1,7 +1,7 @@
 default: &default
   adapter: "postgresql"
   encoding: "unicode"
-  database: "<%= ENV.fetch('POSTGaES_DB') { 'hello' } %>"
+  database: "<%= ENV.fetch('POSTGRES_DB') { 'hello' } %>"
   username: "<%= ENV.fetch('POSTGRES_USER') { 'hello' } %>"
   password: "<%= ENV.fetch('POSTGRES_PASSWORD') { 'password' } %>"
   host: "<%= ENV.fetch('POSTGRES_HOST') { 'postgres' } %>"
