@@ -67,6 +67,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `esbuild` to `0.25.3`
 - Update `tailwindcss` to `4.1.5`
 
+### Removed
+
+- `config.log_formatter` from the production config
+
 ## [0.9.0] - 2024-08-09
 
 ### Changed
