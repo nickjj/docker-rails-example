@@ -15,6 +15,11 @@ module Hello
     #   https://guides.rubyonrails.org/autoloading_and_reloading_constants.html#config-autoload-lib-ignore.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    # Use a more efficient serializer, please see:
+    #   https://guides.rubyonrails.org/configuring.html#config-active-support-message-serializer
+    config.active_support.message_serializer = :message_pack
+    config.action_dispatch.cookies_serializer = :message_pack
+
     # Log to STDOUT because Docker expects all processes to log here. You could
     # then collect logs using journald, syslog or forward them somewhere else.
     config.logger = ActiveSupport::TaggedLogging.logger(STDOUT)
@@ -25,7 +30,8 @@ module Hello
     # Set Redis as the back-end for the cache.
     config.cache_store = :redis_cache_store, {
       url: ENV.fetch("REDIS_URL") { "redis://redis:6379/1" },
-      namespace: "cache"
+      namespace: "cache",
+      serializer: :message_pack
     }
 
     # Set Sidekiq as the back-end for Active Job.

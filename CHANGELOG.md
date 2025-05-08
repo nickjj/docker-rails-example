@@ -32,6 +32,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Use `.hadolint.yaml` to configure Hadolint instead of inline flags
 - Remove `build-essential` from the `Dockerfile`'s app stage to reduce image size by ~50% / 250MB
 - Rename run script's `rubocop` command to `format`
+- Use `message_pack` as a serializer
 
 #### Languages and services
 

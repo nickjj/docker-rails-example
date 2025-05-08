@@ -145,6 +145,7 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.25.5)
+    msgpack (1.8.0)
     net-imap (0.5.8)
       date
       net-protocol
@@ -335,6 +336,7 @@ DEPENDENCIES
   hotwire-spark (~> 0.1)
   jbuilder
   jsbundling-rails
+  msgpack (>= 1.7.0)
   pg (~> 1.1)
   propshaft (~> 1.1)
   puma (~> 6.4)

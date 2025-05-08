@@ -6,6 +6,9 @@ ruby "3.4.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0"
 
+# Efficient serialization [https://github.com/msgpack/msgpack-ruby]
+gem "msgpack", ">= 1.7.0"
+
 # An improved asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft", "~> 1.1"
 
