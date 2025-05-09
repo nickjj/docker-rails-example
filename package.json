@@ -4,7 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "3.2.2",
     "@hotwired/turbo-rails": "8.0.13",
-    "esbuild": "0.25.3",
+    "esbuild": "0.25.4",
     "tailwindcss": "4.1.5",
     "@tailwindcss/cli": "4.1.5",
     "@tailwindcss/postcss": "4.1.5"
