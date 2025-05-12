@@ -44,9 +44,10 @@ test() {
 
   if [ "${run_build}" = "-b" ]; then
     test_command="yarn build && yarn build:css && ${test_command}"
+    shift
   fi
 
-  _dc -e "RAILS_ENV=test" js bash -c "${test_command}"
+  _dc -e "RAILS_ENV=test" js bash -c "${test_command} ${*:-test/}"
 }
 
 shell() {
