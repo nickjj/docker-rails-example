@@ -48,15 +48,15 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `minitest` to `5.25.4`
 - Update `pg` to `1.5.9`
 - Update `puma` to `6.6.0`
-- Update `rack` to `3.1.15`
+- Update `rack` to `3.1.16`
 - Update `rails` to `8.0.2`
 - Update `redis` to `5.4.0`
 - Update `rubocop-rails` to `2.32.0`
-- Update `rubocop` to `1.75.8`
+- Update `rubocop` to `1.77.0`
 - Update `selenium-webdriver` to `4.32.0`
 - Update `sidekiq` to `8.0.4`
 - Update `stimulus-rails` to `1.3.4`
-- Update `turbo-rails` to `2.0.13`
+- Update `turbo-rails` to `2.0.16`
 
 #### Front-end dependencies
 
