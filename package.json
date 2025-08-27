@@ -4,10 +4,10 @@
   "dependencies": {
     "@hotwired/stimulus": "3.2.2",
     "@hotwired/turbo-rails": "8.0.16",
-    "esbuild": "0.25.8",
-    "tailwindcss": "4.1.11",
-    "@tailwindcss/cli": "4.1.11",
-    "@tailwindcss/postcss": "4.1.11"
+    "esbuild": "0.25.9",
+    "tailwindcss": "4.1.12",
+    "@tailwindcss/cli": "4.1.12",
+    "@tailwindcss/postcss": "4.1.12"
   },
   "scripts": {
     "build": "./run yarn:build",
