@@ -36,7 +36,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Languages and services
 
-- Update `Ruby` to `3.4.5`
+- Update `Ruby` to `3.4.7`
 - Update `Node` to `22.X`
 - Update `Postgres` to `18.0`
 - Update `Redis` to `8.2.2`
