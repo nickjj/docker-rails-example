@@ -63,11 +63,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Front-end dependencies
 
 - Update `@hotwired/turbo-rails` to `8.0.18`
-- Update `@tailwindcss/cli` to `4.1.14`
-- Update `@tailwindcss/postcss` to `4.1.14`
-- Update `esbuild` to `0.25.10`
-- Update `esbuild` to `0.25.9`
-- Update `tailwindcss` to `4.1.14`
+- Update `@tailwindcss/cli` to `4.1.15`
+- Update `@tailwindcss/postcss` to `4.1.15`
+- Update `esbuild` to `0.25.11`
+- Update `tailwindcss` to `4.1.15`
 
 ### Removed
 
