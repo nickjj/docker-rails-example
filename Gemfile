@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.4.7"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0"
+gem "rails", "~> 8.1"
 
 # Efficient serialization [https://github.com/msgpack/msgpack-ruby]
 gem "msgpack", ">= 1.7.0"
@@ -16,7 +16,7 @@ gem "propshaft", "~> 1.1"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 6.4"
+gem "puma", "~> 7.1"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"

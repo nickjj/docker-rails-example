@@ -7,7 +7,7 @@ default: &default
   host: "<%= ENV.fetch('POSTGRES_HOST') { 'postgres' } %>"
   port: "<%= ENV.fetch('POSTGRES_PORT') { 5432 } %>"
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: "<%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>"
+  max_connections: "<%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>"
 
 development:
   <<: *default

@@ -48,7 +48,7 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
-  # Change to "debug" to log everything (including potentially personally-identifiable information!)
+  # Change to "debug" to log everything (including potentially personally-identifiable information!).
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
   # Prepend all log lines with the following tags.
