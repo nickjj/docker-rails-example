@@ -45,20 +45,20 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Update `cssbundling-rails` to `1.4.3`
 - Update `hotwire-spark` to `0.1.13`
-- Update `minitest` to `5.25.4`
+- Update `minitest` to `5.26.2`
 - Update `pp` to `0.6.3`
 - Update `propshaft` to `1.3.1`
 - Update `puma` to `7.1.0`
 - Update `rack-mini-profiler` to `4.0.1`
-- Update `rack` to `3.2.2`
-- Update `rails` to `8.1.0`
+- Update `rack` to `3.2.4`
+- Update `rails` to `8.1.1`
 - Update `redis` to `5.4.1`
-- Update `rubocop-rails` to `2.33.4`
-- Update `rubocop` to `1.81.1`
-- Update `selenium-webdriver` to `4.36.0`
-- Update `sidekiq` to `8.0.8`
+- Update `rubocop-rails` to `2.34.0`
+- Update `rubocop` to `1.81.7`
+- Update `selenium-webdriver` to `4.38.0`
+- Update `sidekiq` to `8.0.9`
 - Update `stimulus-rails` to `1.3.4`
-- Update `turbo-rails` to `2.0.17`
+- Update `turbo-rails` to `2.0.20`
 
 #### Front-end dependencies
 
