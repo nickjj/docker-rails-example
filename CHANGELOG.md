@@ -39,7 +39,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `Ruby` to `3.4.7`
 - Update `Node` to `22.X`
 - Update `Postgres` to `18.1`
-- Update `Redis` to `8.2.2`
+- Update `Redis` to `8.2.3`
 
 #### Back-end dependencies
 
