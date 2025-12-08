@@ -72,6 +72,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - `config.log_formatter` from the production config
 
+### Fixed
+
+- Allow piping output into Docker Compose commands through the `run` script without TTY issues
+
 ## [0.9.0] - 2024-08-09
 
 ### Changed
