@@ -53,10 +53,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update `rack` to `3.2.4`
 - Update `rails` to `8.1.1`
 - Update `redis` to `5.4.1`
-- Update `rubocop-rails` to `2.34.0`
-- Update `rubocop` to `1.81.7`
+- Update `rubocop-rails` to `2.34.2`
+- Update `rubocop` to `1.82.1`
 - Update `selenium-webdriver` to `4.38.0`
-- Update `sidekiq` to `8.0.9`
+- Update `sidekiq` to `8.1.0`
 - Update `stimulus-rails` to `1.3.4`
 - Update `turbo-rails` to `2.0.20`
 
