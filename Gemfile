@@ -46,7 +46,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # gem "image_processing", "~> 1.2"
 
 # Execute jobs in the background [https://github.com/mperham/sidekiq]
-gem "sidekiq", "~> 8.1"
+gem "connection_pool", "~> 2"
+gem "sidekiq", "~> 8.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -68,6 +69,9 @@ group :development do
 end
 
 group :test do
+  # Run tests [https://github.com/minitest/minitest]
+  gem "minitest", "~> 5"
+
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
