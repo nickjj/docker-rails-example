@@ -1,4 +1,4 @@
-FROM ruby:3.4.7-slim-trixie AS assets
+FROM ruby:4.0.0-slim-trixie AS assets
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
@@ -42,7 +42,7 @@ CMD ["bash"]
 
 ###############################################################################
 
-FROM ruby:3.4.7-slim-trixie AS app
+FROM ruby:4.0.0-slim-trixie AS app
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
