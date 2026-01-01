@@ -3,8 +3,8 @@ LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
 
-ARG UID=1000
-ARG GID=1000
+ARG APP_UID=1000
+ARG APP_GID=1000
 
 RUN bash -c "set -o pipefail && apt-get update \
   && apt-get install -y --no-install-recommends build-essential curl git libpq-dev libyaml-dev \
@@ -14,8 +14,8 @@ RUN bash -c "set -o pipefail && apt-get update \
   && corepack enable \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
-  && groupadd -g \"${GID}\" ruby \
-  && useradd --create-home --no-log-init -u \"${UID}\" -g \"${GID}\" ruby \
+  && groupadd -g \"${APP_GID}\" ruby \
+  && useradd --create-home --no-log-init -u \"${APP_UID}\" -g \"${APP_GID}\" ruby \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules /app"
 
 USER ruby
@@ -47,15 +47,15 @@ LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
 
-ARG UID=1000
-ARG GID=1000
+ARG APP_UID=1000
+ARG APP_GID=1000
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends curl libpq-dev \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
-  && groupadd -g "${GID}" ruby \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ruby \
+  && groupadd -g "${APP_GID}" ruby \
+  && useradd --create-home --no-log-init -u "${APP_UID}" -g "${APP_GID}" ruby \
   && chown ruby:ruby -R /app
 
 USER ruby
