@@ -12,7 +12,7 @@ practices](https://nickjanetakis.com/blog/best-practices-around-production-ready
 based on building and deploying dozens of assorted Dockerized web apps since
 late 2014.
 
-**This app is using Rails 8.1.1 and Ruby 4.0.0**. The screenshot shows
+**This app is using Rails 8.1.2 and Ruby 4.0.0**. The screenshot shows
 `X.X.X` since they get updated regularly:
 
 [![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)

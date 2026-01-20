@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "3.2.2",
-    "@hotwired/turbo-rails": "8.0.20",
+    "@hotwired/turbo-rails": "8.0.21",
     "esbuild": "0.27.2",
     "tailwindcss": "4.1.18",
     "@tailwindcss/cli": "4.1.18",
