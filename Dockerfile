@@ -1,4 +1,4 @@
-FROM ruby:4.0.2-slim-trixie AS assets
+FROM ruby:4.0.2-alpine AS assets
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
@@ -6,17 +6,23 @@ WORKDIR /app
 ARG APP_UID=1000
 ARG APP_GID=1000
 
-RUN bash -c "set -o pipefail && apt-get update \
-  && apt-get install -y --no-install-recommends build-essential curl git libpq-dev libyaml-dev \
-  && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key -o /etc/apt/keyrings/nodesource.asc \
-  && echo 'deb [signed-by=/etc/apt/keyrings/nodesource.asc] https://deb.nodesource.com/node_24.x nodistro main' | tee /etc/apt/sources.list.d/nodesource.list \
-  && apt-get update && apt-get install -y --no-install-recommends nodejs \
-  && corepack enable \
-  && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
-  && apt-get clean \
-  && groupadd -g \"${APP_GID}\" ruby \
-  && useradd --create-home --no-log-init -u \"${APP_UID}\" -g \"${APP_GID}\" ruby \
-  && mkdir /node_modules && chown ruby:ruby -R /node_modules /app"
+# Instalar dependencias de Alpine necesarias para compilar gemas y assets
+RUN apk add --no-cache \
+  build-base \
+  git \
+  curl \
+  postgresql-dev \
+  yaml-dev \
+  tzdata \
+  nodejs \
+  npm \
+  bash \
+  linux-headers \
+  libffi-dev \
+  && npm install -g yarn \
+  && addgroup -g "${APP_GID}" ruby \
+  && adduser -u "${APP_UID}" -G ruby -s /bin/sh -D ruby \
+  && mkdir /node_modules && chown ruby:ruby -R /node_modules /app
 
 USER ruby
 
@@ -38,11 +44,11 @@ COPY --chown=ruby:ruby . .
 RUN if [ "${RAILS_ENV}" != "development" ]; then \
   SECRET_KEY_BASE_DUMMY=1 rails assets:precompile; fi
 
-CMD ["bash"]
+CMD ["sh"]
 
 ###############################################################################
 
-FROM ruby:4.0.2-slim-trixie AS app
+FROM ruby:4.0.2-alpine AS app
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
@@ -50,12 +56,14 @@ WORKDIR /app
 ARG APP_UID=1000
 ARG APP_GID=1000
 
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends curl libpq-dev \
-  && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
-  && apt-get clean \
-  && groupadd -g "${APP_GID}" ruby \
-  && useradd --create-home --no-log-init -u "${APP_UID}" -g "${APP_GID}" ruby \
+# Instalar dependencias mínimas de Alpine para runtime
+RUN apk add --no-cache \
+  curl \
+  postgresql-dev \
+  tzdata \
+  bash \
+  && addgroup -g "${APP_GID}" ruby \
+  && adduser -u "${APP_UID}" -G ruby -s /bin/sh -D ruby \
   && chown ruby:ruby -R /app
 
 USER ruby
