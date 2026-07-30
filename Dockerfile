@@ -18,7 +18,7 @@ RUN bash -c "set -o pipefail && apt-get update \
   && useradd --create-home --no-log-init -u \"${APP_UID}\" -g \"${APP_GID}\" ruby \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules /app"
 
-USER ruby
+USER 1000
 
 COPY --chown=ruby:ruby Gemfile* ./
 RUN bundle install
@@ -58,7 +58,7 @@ RUN apt-get update \
   && useradd --create-home --no-log-init -u "${APP_UID}" -g "${APP_GID}" ruby \
   && chown ruby:ruby -R /app
 
-USER ruby
+USER 1000
 
 COPY --chown=ruby:ruby bin/ ./bin
 RUN chmod 0755 bin/*
