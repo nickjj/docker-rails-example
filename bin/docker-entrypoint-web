@@ -6,4 +6,7 @@ set -e
 # into your volume persisted public directory.
 cp -r /public /app
 
+# This shouldn't be here, but failing to shutdown properly might leave this
+rm -f /app/tmp/pids/server.pid
+
 exec "$@"
